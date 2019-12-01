@@ -19,7 +19,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{route('viewproduct')}}">
+            <a class="nav-link" href="{{route('product.index')}}">
               <i class="material-icons">library_books</i>
               <p>Product</p>
             </a>

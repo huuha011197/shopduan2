@@ -69,13 +69,16 @@ Route::group(['middleware' => ['auth']], function () {
 		// Route::put('updatecategory/{id}','admin@updatecategory')->name('updatecategory');
 
 		Route::resource('category', 'CategoryController');
+		Route::resource('product', 'ProductController');
+		
+		// Route::get('viewproduct','admin@viewproduct')->name('viewproduct');
+		// Route::get('themproduct','admin@themproduct')->name('themproduct');
+		// Route::post('addproduct','admin@addproduct')->name('addproduct');
+		// Route::get('suaproduct/{id}','admin@suaproduct')->name('suaproduct');
+		// Route::get('xoaproduct/{id}','admin@xoaproduct')->name('xoaproduct');
+		// Route::post('upproduct/{id}','admin@upproduct')->name('upproduct');
 
-		Route::get('viewproduct','admin@viewproduct')->name('viewproduct');
-		Route::get('themproduct','admin@themproduct')->name('themproduct');
-		Route::post('addproduct','admin@addproduct')->name('addproduct');
-		Route::get('suaproduct/{id}','admin@suaproduct')->name('suaproduct');
-		Route::get('xoaproduct/{id}','admin@xoaproduct')->name('xoaproduct');
-		Route::post('upproduct/{id}','admin@upproduct')->name('upproduct');
+
 		Route::get('order','admin@order')->name('order');
 		Route::get('customer/{id}','admin@customer')->name('customer');
 		Route::get('bill/{id}','admin@bill')->name('bill');

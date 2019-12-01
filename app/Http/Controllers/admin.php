@@ -134,6 +134,7 @@ class admin extends Controller
                 "promotion_price.required"=>"promotion price field is required."
             ]);
        $data=$req->all();
+       dd($data);
        $file = $req->file('image');
        $data['image']=$file->getClientOriginalName();
         Product::create($data);

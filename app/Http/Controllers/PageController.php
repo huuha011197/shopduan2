@@ -102,7 +102,7 @@ class PageController extends Controller
     }
     public function registernew( Request $req){
         $this->validate($req,[
-                'full_name' => 'required|min:5|max:35',
+                'name' => 'required|min:5|max:35',
                 'email' => 'required|email|unique:users',
                 'phone' => 'required|numeric',
                 'password' => 'required|min:3|max:20',
@@ -112,9 +112,9 @@ class PageController extends Controller
                 'email.required'=>"Bạn chưa nhập email",
                 'email.email'=>"Định dạng là email",
                 'email.unique'=>'email đã được sử dụng',
-                'full_name.min' => ' Họ tên tối thiểu 5 kí tự.',
-                'full_name.max' => ' Họ tên tối đa 35 kí tự',
-                'full_name.required' => ' Bạn chưa nhập họ tên',
+                'name.min' => ' Tên tối thiểu 5 kí tự.',
+                'name.max' => ' Tên tối đa 35 kí tự',
+                'name.required' => ' Bạn chưa nhập tên đăng nhập',
                 'password.required'=>'Bạn chưa nhập mật khẩu',
                 'password.min'=>'Mật khẩu tối thiểu 3 kí tự',
                 'password.max'=>'Mật khẩu tối đa 20 kí tự',

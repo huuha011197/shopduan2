@@ -11,11 +11,8 @@ use  App\Http\Middleware;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Auth::routes();
-Route::get('index',[
+Route::get('/',[
 	'as'=>'trang-chu',
 	'uses'=>'PageController@getIndex'	
 ]);

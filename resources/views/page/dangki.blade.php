@@ -42,7 +42,7 @@
 
 						<div class="form-block">
 							<label for="your_last_name">Họ tên*</label>
-							<input type="text" id="your_last_name" name="full_name"  >
+							<input type="text" id="your_last_name" name="name"  >
 						</div>
 
 						<div class="form-block">

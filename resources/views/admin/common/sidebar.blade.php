@@ -13,7 +13,7 @@
             </a>
           </li>
           <li class="nav-item " id="category">
-            <a class="nav-link" href="{{route('viewcategory')}}">
+            <a class="nav-link" href="{{route('category.index')}}">
               <i class="material-icons">content_paste</i>
               <p>category</p>
             </a>

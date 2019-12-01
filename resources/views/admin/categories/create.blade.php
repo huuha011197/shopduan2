@@ -20,27 +20,32 @@
                   </p>
                 </div>
                 <div class="card-body">
-                  <form method="post" action="{{route('updatecategory', $category->id)}}">
+                  <form method="post" action="{{route('category.store')}}" enctype="multipart/form-data">
                     @csrf
-                    @method('put')
-                   
+                    @method('POST')
                       <div class="col-md-3">
                         <div class="form-group bmd-form-group">
-                          <label class="bmd-label-floating">ID: {{$category->id}}</label>
-                          <input type="text" class="form-control" value="" disabled="">
+                          <label class="bmd-label-floating">ID (auto)</label>
+                          <input type="text" class="form-control" disabled="">
                         </div>
                       </div>
                       <div class="col-md-5">
                         <div class="form-group bmd-form-group">
                           <label class="bmd-label-floating">Category name</label>
-                          <input type="text" name="name" value="{{$category->name}}" class="form-control" >
+                          <input type="text" name="name" class="form-control" >
                         </div>
                       </div>
                       <div class="col-md-9">
                         <div class="form-group bmd-form-group">
                           <label class="bmd-label-floating">Decruption</label>
-                          <textarea  name="decription" rows="5"  class="form-control">{{$category->description}}</textarea>
+                          <textarea name="decription" rows="5" class="form-control"></textarea>
                         </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Image</label>
+                        </div>
+                        <input type="file" name="image" style="margin-left:100px ">
                       </div>
 
                     <button type="submit" class="btn btn-primary pull-right">Add new</button>

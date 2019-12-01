@@ -60,12 +60,16 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::get('newuser','admin@newuser')->name('newuser');
 		Route::post('addnewuser','admin@addnewuser')->name('addnewuser');
 		Route::post('upuser/{id}','admin@upuser')->name('upuser');
-		Route::get('category','admin@viewcategory')->name('viewcategory');
-		Route::get('themcategory','admin@themcategory')->name('themcategory');
-		Route::post('addnewcategory','admin@addnewcategory')->name('addnewcategory');
-		Route::get('suacategory/{id}','admin@suacategory')->name('suacategory');
-		Route::get('xoacategory/{id}','admin@xoacategory')->name('xoacategory');
-		Route::put('updatecategory/{id}','admin@updatecategory')->name('updatecategory');
+
+		// Route::get('category','CategoryController@index')->name('category.index');
+		// Route::get('themcategory','admin@themcategory')->name('themcategory');
+		// Route::post('addnewcategory','admin@addnewcategory')->name('addnewcategory');
+		// Route::get('suacategory/{id}','admin@suacategory')->name('suacategory');
+		// Route::get('xoacategory/{id}','admin@xoacategory')->name('xoacategory');
+		// Route::put('updatecategory/{id}','admin@updatecategory')->name('updatecategory');
+
+		Route::resource('category', 'CategoryController');
+
 		Route::get('viewproduct','admin@viewproduct')->name('viewproduct');
 		Route::get('themproduct','admin@themproduct')->name('themproduct');
 		Route::post('addproduct','admin@addproduct')->name('addproduct');

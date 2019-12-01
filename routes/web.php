@@ -53,7 +53,7 @@ Route::get('register','PageController@register')->name('register');
 Route::post('registernew','PageController@registernew')->name('registernew');
 Route::post('getlogin','PageController@getlogin')->name('getlogin');
 Route::get('logout','PageController@logout')->name('logout');
-
+Route::post('/search', 'PageController@search')->name('search');
 Route::group(['middleware' => ['auth']], function () {	
 	Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
 		Route::get('getadmin','admin@getadmin')->name('getadmin');

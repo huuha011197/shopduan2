@@ -151,4 +151,11 @@ class PageController extends Controller
         Auth::logout();
         return redirect()->route('trang-chu');
     }
+    public function search(Request $req){
+        $keyword=$req->search;
+        $items = Product::where([ 
+            ['name', 'LIKE', '%' . $keyword . '%'],
+        ])->paginate(6);
+        return view('page.search',compact('items','keyword'));
+    }
 }

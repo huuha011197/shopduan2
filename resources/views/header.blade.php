@@ -8,15 +8,24 @@
 					</ul>
 				</div>
 				<div class="pull-right auto-width-right">
-					<ul class="top-details menu-beta l-inline">
+					<ul class="top-details menu-beta l-inline2">
+
 						@if(Auth::check())
-						<li><a href="">{{Auth::user()->full_name}}</a></li>
-						<li><a href="{{route('logout')}}">Đăng xuất</a></li>
+						<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Auth::user()->full_name}}
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							<li><a href="{{route('logout')}}">Đăng xuất</a></li>
+							<li><a href="#">Page 1-2</a></li>
+							<li><a href="#">Page 1-3</a></li>
+							</ul>
+						</li>
 						@else
 						<li><a href="{{route('login')}}">Đăng nhập</a></li>
 						<!-- <li><a href="{{route('register')}}">Đăng kí</a></li> -->
 						@endif
 					</ul>
+					
 				</div>
 				<div class="clearfix"></div>
 			</div> <!-- .container -->
@@ -28,7 +37,8 @@
 				</div>
 					<div class="row">
 						<div class="col-md-6" style="margin: 20px 50px;display: inline-block;height: 45px;line-height: 45px;background-color: #fff;border-radius: 3px;">
-							<form class="example" action="/action_page.php">
+							<form class="example" method='post' action="{{route('search')}}">
+							{{ csrf_field() }}
 							  <input type="text" placeholder="Search.." name="search">
 							  <button type="submit"><i class="fa fa-search"></i></button>
 							</form>

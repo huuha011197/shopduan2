@@ -109,8 +109,8 @@ class admin extends Controller
         $cate->update($data);
         return redirect()->back();
     }
-        public function viewproduct(){
-        $product= Product::all();
+    public function viewproduct(){
+        $product= Product::paginate(5);
         return view('admin.viewproduct',compact('product'));
     }
      public function themproduct(){
@@ -134,7 +134,6 @@ class admin extends Controller
                 "promotion_price.required"=>"promotion price field is required."
             ]);
        $data=$req->all();
-       dd($data);
        $file = $req->file('image');
        $data['image']=$file->getClientOriginalName();
         Product::create($data);

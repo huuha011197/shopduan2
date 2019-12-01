@@ -614,6 +614,9 @@ list-style:none;
 overflow:hidden
 }
 
+.l-inline2 {
+    list-style:none;
+    }
 .l-inline li {
 float:left
 }

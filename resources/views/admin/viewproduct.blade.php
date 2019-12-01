@@ -49,12 +49,14 @@
                              <a href="{{route('suaproduct',$ca->id)}}">repair</a>
                             <a href="{{route('xoaproduct',$ca->id)}}">delete</a>
                           </td>
-
                         </tr>
                         @endforeach
                       </tbody>
+                      
                     </table>
+                    
                   </div>
+                  <div class="row">{{$product->links()}}</div>
                 </div>
               </div>
             </div>

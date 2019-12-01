@@ -20,8 +20,9 @@
                   </p>
                 </div>
                 <div class="card-body">
-                  <form method="post" action="{{route('upuser',$user->id)}}">
+                  <form method="post" action="{{route('user.update',$user->id)}}">
                     @csrf
+                    @method('PUT')
                     <div class="row">
                       <div class="col-md-5">
                         <div class="form-group bmd-form-group">
@@ -31,8 +32,8 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group bmd-form-group">
-                          <label class="bmd-label-floating">Full name</label>
-                          <input type="text" name="full_name" value="{{$user->full_name}}" class="form-control" >
+                          <label class="bmd-label-floating">User name</label>
+                          <input type="text" name="name" value="{{$user->name}}" class="form-control" >
                         </div>
                       </div>
                       <div class="col-md-4">

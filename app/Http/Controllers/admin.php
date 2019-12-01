@@ -60,9 +60,11 @@ class admin extends Controller
         $user->update($data);
         return redirect()->back();
     }
+
+
     public function viewcategory(){
         $category= ProductType::all();
-        return view('admin.viewcategory',compact('category'));
+        return view('admin.categories.index',compact('category'));
     }
     public function themcategory(){
         return view('admin.addcategory');
@@ -77,20 +79,24 @@ class admin extends Controller
         return redirect()->back();
     }
     public function addnewcategory(Request $req){
-         $this->validate($req,[
-                'name' => 'required|min:5|max:35',
-                'decription' => 'required|min:15',
-            ],[
-                'name.min' => ' The category name must be at least 5 characters.',
-                'name.max' => ' The category name may not be greater than 35 characters.',
-                'name.required' => ' The category name field is required.',
-                'decription.required' =>"The category decription field is required.",
-                'decription.min' =>"The category decription must be at least 15 characters.",
-            ]);
-         $category=new ProductType;
-         $category->name=$req->name;
-         $category->description=$req->decription;
-         $category->save();
+        $this->validate($req,[
+            'name' => 'required|min:5|max:35',
+            'decription' => 'required|min:15',
+        ],[
+            'name.min' => ' The category name must be at least 5 characters.',
+            'name.max' => ' The category name may not be greater than 35 characters.',
+            'name.required' => ' The category name field is required.',
+            'decription.required' =>"The category decription field is required.",
+            'decription.min' =>"The category decription must be at least 15 characters.",
+        ]);
+        $category=new ProductType;
+        $category->name=$req->name;
+        $category->description=$req->decription;
+        
+        $file = $req->file('image');
+        $category->image = $file->getClientOriginalName();
+        $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
+        $category->save();
         return redirect()->back();
     }
     public function updatecategory(Request $req, $id){
@@ -109,6 +115,10 @@ class admin extends Controller
         $cate->update($data);
         return redirect()->back();
     }
+
+
+
+    
     public function viewproduct(){
         $product= Product::paginate(5);
         return view('admin.viewproduct',compact('product'));

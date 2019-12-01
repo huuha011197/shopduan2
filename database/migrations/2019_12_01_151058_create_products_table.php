@@ -18,14 +18,14 @@ class CreateProductsTable extends Migration
             $table->bigInteger('id_type')->unsigned();
             $table->string('name');
             $table->string('description');
-            $table->string('unit_price');
-            $table->string('promotion_price');
+            $table->double('unit_price');
+            $table->double('promotion_price');
             $table->string('image');
             $table->string('unit');
             $table->string('new');
             $table->timestamps();
 
-            $table->foreign('type_product_id')->references('id')->on('id_type')->onDelete('cascade');
+            $table->foreign('id_type')->references('id')->on('type_products')->onDelete('cascade');
         });
     }
 

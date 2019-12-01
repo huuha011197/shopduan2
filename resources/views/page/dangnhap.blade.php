@@ -48,7 +48,7 @@
 					<h2>Tạo tài khoản mới</h2>
 					<form action="{{route('registernew')}}" method="post">
 						@csrf
-					  <input type="text" name="full_name" placeholder="fullname">
+					  <input type="text" name="name" placeholder="Username">
 					  <input type="password" name="password" placeholder="Password" >
 					  <input type="password" name="re_password" placeholder="Re password" >
 					  <input type="email" name="email" placeholder="Email Address" >

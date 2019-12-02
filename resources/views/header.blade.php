@@ -12,12 +12,13 @@
 
 						@if(Auth::check())
 						<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Auth::user()->full_name}}
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Auth::user()->name}}
 							<span class="caret"></span></a>
 							<ul class="dropdown-menu">
+							<li><a href="{{route('cntk')}}">Cập nhật tài khoản</a></li>
+							<li><a href="{{route('doi_mk')}}">Đổi mật khẩu</a></li>
+							<li><a href="#">Lịch sử đặt hàng</a></li>
 							<li><a href="{{route('logout')}}">Đăng xuất</a></li>
-							<li><a href="#">Page 1-2</a></li>
-							<li><a href="#">Page 1-3</a></li>
 							</ul>
 						</li>
 						@else

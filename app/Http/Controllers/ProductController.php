@@ -81,8 +81,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $type = ProductType::all();
-        $product = Product::find($id);
-        return view('admin.products.edit',compact('product','type'));
+        $product = Product::findOrFail($id);
+        return view('admin.products.edit',compact('product', 'type'));
     }
 
     /**
@@ -111,13 +111,13 @@ class ProductController extends Controller
         ]);
         $data = $request->all();
         $file = $request->file('image');
-            if ($file==null) {
-                $data['image']=$request->image2;
+            if ($file == null) {
+                $data['image'] = $request->image2;
             }else{
-                    $data['image']=$file->getClientOriginalName();
+                    $data['image'] = $file->getClientOriginalName();
                     $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
             }
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         $product->update($data);
         return redirect()->back()->with('success', 'Update product successfully!');
     }
@@ -130,7 +130,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        Product::find($id)->delete();
+        Product::findOrFail($id)->delete();
         return redirect()->back()->with('success', 'Delete product successfully!');
     }
 }

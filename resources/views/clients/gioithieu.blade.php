@@ -1,4 +1,5 @@
 @extends('master')
+@section('title', 'Giới thiệu')
 @section('content')
 	<div class="inner-header">
 		<div class="container">
@@ -18,7 +19,6 @@
 			<div class="our-history">
 				<h2 class="text-center wow fadeInDown">Our History</h2>
 				<div class="space35">&nbsp;</div>
-
 				<div class="history-slider">
 					<div class="history-navigation">
 						<a data-slide-index="0" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2003</span></a>

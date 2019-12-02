@@ -15,12 +15,16 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
-                    <thead class=" text-primary">
+                    <thead class="text-primary">
                       <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Unitprice</th>
                         <th>image</th>
+                        <th>Unitprice</th>
+                        <th>Promotion_price</th>
+                        <th>Quantity</th>
+                        <th>Description</th>
+                        <th>Create at</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -33,10 +37,22 @@
                           {{$ca->name}}
                         </td>
                         <td>
+                          <img style="height: 100px;width: 100px" src="source/image/product/{{$ca->image}}">
+                        </td>
+                        <td>
                           {{$ca->unit_price}}
                         </td>
                         <td>
-                          <img style="height: 200px;width: 200px" src="source/image/product/{{$ca->image}}">
+                          {{$ca->promotion_price}}
+                        </td>
+                        <td>
+                          {{$ca->quantity}}
+                        </td>
+                        <td >
+                          <p style="width: 500px;height: 200px; overflow-y: scroll;">{{$ca->description}}</p>
+                        </td>
+                        <td>
+                          {{$ca->created_at}}
                         </td>
                         <td>
                           <a class="btn btn-primary btn-sm" href="{{route('product.edit',$ca->id)}}">Edit</a>

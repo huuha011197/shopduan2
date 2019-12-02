@@ -20,6 +20,7 @@ Route::group(['namespace' => 'Clients'], function(){
 	Route::post('search', 'HomeController@search')->name('search');
 	Route::get('lienhe', 'HomeController@lienhe')->name('lien_he');
 	Route::get('gioithieu', 'HomeController@gioithieu')->name('gioithieu');
+	Route::post('comment', 'HomeController@comment')->name('comment')->middleware('user');;
 });
 
 Route::group(['namespace' => 'Auth'], function(){
@@ -30,9 +31,6 @@ Route::group(['namespace' => 'Auth'], function(){
 	Route::post('getlogin','AuthController@getlogin')->name('getlogin');
 	Route::get('logout','AuthController@logout')->name('logout');
 });
-
-
-
 
 Route::group(['middleware' => ['auth']], function () {	
 	Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){

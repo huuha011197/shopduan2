@@ -105,8 +105,9 @@
 									</div>
 									@endif
 									<div class="single-item-header">
-										<a href="{{route('ctsp',$new->id)}}"><img height="250px"
-												src="source/image/product/{{$new->image}}" alt=""></a>
+										<a href="{{route('ctsp',$new->id)}}">
+											<img height="250px" src="source/image/product/{{$new->image}}" alt="">
+										</a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$new->name}}</p>

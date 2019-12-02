@@ -7,6 +7,7 @@ use App\Slide;
 use App\Product;
 use App\ProductType;
 use App\User;
+use App\Comment;
 use Auth;
 use App\Http\Controllers\Controller;
 
@@ -26,8 +27,8 @@ class HomeController extends Controller
     	return view('clients.loai_san_pham', compact('sp_theo_loai', 'loai', 'lsp'));
     }
 
-    public function ctsp(Request $reqs){
-    	$sp = Product::where('id',$reqs->id)->first();
+    public function ctsp($id){
+        $sp = Product::findOrFail($id);
     	$sptt = Product::where('id_type', $sp->id_type)->paginate(3);
     	return view('clients.chitiet',compact('sp', 'sptt'));
     }
@@ -46,5 +47,18 @@ class HomeController extends Controller
 
     public function gioithieu(){
     	return view('clients.gioithieu');
+    }
+
+    public function comment(Request $request)
+    {
+        $comment = new Comment;
+        $user_id = Auth::user()->id;
+        $product_id = $request->product_id;
+        $comment->user_id = $user_id;
+        $comment->product_id = $product_id;
+        $comment->content = $request->content;
+        $comment->status = $request->status;
+        $comment->save();
+        return redirect()->route('ctsp', $product_id);
     }
 }

@@ -12,23 +12,21 @@ use  App\Http\Middleware;
 */
 
 Auth::routes();
+Route::group(['namespace' => 'Clients', 'middleware' => 'user'], function(){
+	// Homepage
+	Route::get('/', 'HomeController@getIndex')->name('trang-chu');
+	Route::get('loaisanpham/{type}', 'HomeController@getloaisp')->name('loai_san_pham');
+	Route::get('ctsanpham/{id}', 'HomeController@ctsp')->name('ctsp');
+	Route::post('search', 'HomeController@search')->name('search');
+	Route::get('lienhe', 'HomeController@lienhe')->name('lien_he');
+	Route::get('gioithieu', 'HomeController@gioithieu')->name('gioithieu');
 
-
-// Profile
-Route::get('cntk','PageController@cntk')->name('cntk');
-Route::post('save_cntk/{id}','PageController@save_cntk')->name('save_cntk');
-Route::get('doi_mk','PageController@doi_mk')->name('doi_mk');
-Route::post('save_doi_mk','PageController@save_doi_mk')->name('save_doi_mk');
-
-// Homepage
-Route::group(['namespace' => 'Clients'], function()
-    {
-		Route::get('/', 'HomeController@getIndex')->name('trang-chu');
-		Route::get('loaisanpham/{type}', 'HomeController@getloaisp')->name('loai_san_pham');
-		Route::get('ctsanpham/{id}', 'HomeController@ctsp')->name('ctsp');
-		Route::get('lienhe', 'HomeController@lienhe')->name('lien_he');
-		Route::get('gioithieu', 'HomeController@gioithieu')->name('gioithieu');
-    });
+	// Profile
+	Route::get('cntk','ProfileController@cntk')->name('cntk');
+	Route::post('save_cntk/{id}','ProfileController@save_cntk')->name('save_cntk');
+	Route::get('doi_mk','ProfileController@doi_mk')->name('doi_mk');
+	Route::post('save_doi_mk','ProfileController@save_doi_mk')->name('save_doi_mk');
+});
 
 
 // Cart
@@ -54,7 +52,8 @@ Route::get('register','PageController@register')->name('register');
 Route::post('registernew','PageController@registernew')->name('registernew');
 Route::post('getlogin','PageController@getlogin')->name('getlogin');
 Route::get('logout','PageController@logout')->name('logout');
-Route::post('/search', 'PageController@search')->name('search');
+
+
 Route::group(['middleware' => ['auth']], function () {	
 	Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
 		Route::get('getadmin','admin@getadmin')->name('getadmin');
@@ -66,10 +65,6 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::get('bill/{id}','admin@bill')->name('bill');
 		Route::get('xoaorder/{id}','admin@xoaorder')->name('xoaorder');
 		Route::get('status/{id}','admin@status')->name('status');
-	});
-
-	Route::group(['prefix' => 'user', 'middleware' => 'user'], function(){
-		Route::get('/', 'PageController@getIndex')->name('trang-chu-user');
 	});
 });
 

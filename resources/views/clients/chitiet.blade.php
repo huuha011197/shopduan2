@@ -68,7 +68,7 @@
 						</ul>
 
 						<div class="panel" id="tab-description">
-							<p>{{$sp->dicription}}</p>
+							<p>{{$sp->description}}</p>
 						</div>
 						<div class="panel" id="tab-reviews">
 							<p>No Reviews</p>

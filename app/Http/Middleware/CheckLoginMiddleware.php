@@ -19,7 +19,7 @@ class CheckLoginMiddleware
         if (Auth::check() && Auth::user()->vai_tro == 1) {
             return redirect()->route('getadmin');
         } if (Auth::check() && Auth::user()->vai_tro == 0){
-            return redirect()->route('trang-chu-user');
+            return redirect()->route('trang-chu');
         } else {
             return $next($request);
         }

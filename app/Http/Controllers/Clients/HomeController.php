@@ -32,6 +32,14 @@ class HomeController extends Controller
     	return view('clients.chitiet',compact('sp', 'sptt'));
     }
 
+    public function search(Request $req){
+        $keyword = $req->search;
+        $items = Product::where([ 
+            ['name', 'LIKE', '%'. $keyword. '%'],
+        ])->paginate(6);
+        return view('page.search',compact('items', 'keyword'));
+    }
+    
     public function lienhe(){
     	return view('clients.lienhe');
     }

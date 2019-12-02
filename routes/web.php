@@ -22,11 +22,16 @@ Route::group(['namespace' => 'Clients'], function(){
 	Route::get('gioithieu', 'HomeController@gioithieu')->name('gioithieu');
 });
 
-Route::get('login','PageController@login')->name('login')->middleware('check');
-Route::get('register','PageController@register')->name('register');
-Route::post('registernew','PageController@registernew')->name('registernew');
-Route::post('getlogin','PageController@getlogin')->name('getlogin');
-Route::get('logout','PageController@logout')->name('logout');
+Route::group(['namespace' => 'Auth'], function(){
+	// Profile
+	Route::get('login','AuthController@login')->name('login')->middleware('check');
+	Route::get('register','AuthController@register')->name('register');
+	Route::post('registernew','AuthController@registernew')->name('registernew');
+	Route::post('getlogin','AuthController@getlogin')->name('getlogin');
+	Route::get('logout','AuthController@logout')->name('logout');
+});
+
+
 
 
 Route::group(['middleware' => ['auth']], function () {	
@@ -41,7 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::get('xoaorder/{id}','admin@xoaorder')->name('xoaorder');
 		Route::get('status/{id}','admin@status')->name('status');
 	});
-	Route::group(['prefix' => 'admin', 'middleware' => 'user'], function(){
+	Route::group(['middleware' => 'user'], function(){
 		// Cart
 		Route::get('add-to-cart/{id}','Clients\CartController@getAddtoCart')->name('themgiohang');
 		Route::get('del-cart/{id}','Clients\CartController@delcart')->name('xoagiohang');

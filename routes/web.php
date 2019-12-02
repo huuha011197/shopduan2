@@ -54,12 +54,13 @@ Route::post('/search', 'PageController@search')->name('search');
 Route::group(['middleware' => ['auth']], function () {	
 	Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
 		Route::get('getadmin','admin@getadmin')->name('getadmin');
-		Route::get('user','admin@viewuser')->name('viewuser');
-		Route::get('suauser/{id}','admin@suauser')->name('suauser');
-		Route::get('xoauser/{id}','admin@xoauser')->name('xoauser');
-		Route::get('newuser','admin@newuser')->name('newuser');
-		Route::post('addnewuser','admin@addnewuser')->name('addnewuser');
-		Route::post('upuser/{id}','admin@upuser')->name('upuser');
+
+		// Route::get('user','admin@viewuser')->name('viewuser');
+		// Route::get('suauser/{id}','admin@suauser')->name('suauser');
+		// Route::get('xoauser/{id}','admin@xoauser')->name('xoauser');
+		// Route::get('newuser','admin@newuser')->name('newuser');
+		// Route::post('addnewuser','admin@addnewuser')->name('addnewuser');
+		// Route::post('upuser/{id}','admin@upuser')->name('upuser');
 
 		// Route::get('category','CategoryController@index')->name('category.index');
 		// Route::get('themcategory','admin@themcategory')->name('themcategory');
@@ -68,6 +69,7 @@ Route::group(['middleware' => ['auth']], function () {
 		// Route::get('xoacategory/{id}','admin@xoacategory')->name('xoacategory');
 		// Route::put('updatecategory/{id}','admin@updatecategory')->name('updatecategory');
 
+		Route::resource('user', 'UserController');
 		Route::resource('category', 'CategoryController');
 		Route::resource('product', 'ProductController');
 		

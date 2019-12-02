@@ -20,8 +20,8 @@
                   </p>
                 </div>
                 <div class="card-body">
-                  <form method="post" action="{{route('addnewuser')}}">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                  <form method="post" action="{{route('user.store')}}">
+                    @csrf
                     <div class="row">
                       <div class="col-md-5">
                         <div class="form-group bmd-form-group">
@@ -31,8 +31,8 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group bmd-form-group">
-                          <label class="bmd-label-floating">Full name</label>
-                          <input type="text" name="full_name" class="form-control" >
+                          <label class="bmd-label-floating">User name</label>
+                          <input type="text" name="name" class="form-control" >
                         </div>
                       </div>
                       <div class="col-md-4">

@@ -21,8 +21,8 @@ class CreateProductsTable extends Migration
             $table->double('unit_price');
             $table->double('promotion_price');
             $table->string('image');
-            $table->string('unit');
-            $table->string('new');
+            $table->string('unit')->default('chiếc');
+            $table->string('new')->default('1');
             $table->timestamps();
 
             $table->foreign('id_type')->references('id')->on('type_products')->onDelete('cascade');

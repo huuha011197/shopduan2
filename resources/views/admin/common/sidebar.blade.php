@@ -7,7 +7,7 @@
             </a>
           </li>
           <li class="nav-item " id="user">
-            <a class="nav-link" href="{{route('viewuser')}}" >
+            <a class="nav-link" href="{{route('user.index')}}" >
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>

@@ -13,53 +13,53 @@ class admin extends Controller
     public function getadmin(){
     	return view('admin.home');
     }
-    public function viewuser(){
-    	$user=User::all();
-    	return view('admin.user',compact("user"));
-    }
-    public function suauser($id){
-    	$user=User::find($id);
-    	return view('admin.suauser',compact("user"));
-    }
-    public function newuser(){
-        return view('admin.newuser');
-    }
-     public function addnewuser(Request $req){
-        $this->validate($req,[
-                'full_name' => 'required|min:5|max:35',
-                'email' => 'required|email|unique:users',
-                'phone' => 'required|numeric',
-                'password' => 'required|min:3|max:20',
-                're_password' => 'required|min:3|max:20|same:password',
-                'address' => 'required',
-                'role'=>"required",
-            ],[
-                'full_name.min' => ' The first name must be at least 5 characters.',
-                'full_name.max' => ' The first name may not be greater than 35 characters.',
-                'full_name.required' => ' The last name field is required.',
-            ]);
-        $user=new User;
-        $user->password=$req->password;
-        $user->full_name=$req->full_name;
-        $user->email=$req->email;
-        $user->phone=$req->phone;
-        $user->password=$req->password;
-        $user->address=$req->address;
-        $user->vai_tro=$req->role;
-        $user->save();
-        return redirect()->back();
-    }
-    public function xoauser($id){
-        $user= User::find($id);
-        $user->delete();
-        return redirect()->back();
-    }
-    public function upuser(Request $req, $id){
-        $user=User::find($id);
-        $data=$req->all();
-        $user->update($data);
-        return redirect()->back();
-    }
+    // public function viewuser(){
+    // 	$user=User::all();
+    // 	return view('admin.user',compact("user"));
+    // }
+    // public function suauser($id){
+    // 	$user=User::find($id);
+    // 	return view('admin.suauser',compact("user"));
+    // }
+    // public function newuser(){
+    //     return view('admin.newuser');
+    // }
+    //  public function addnewuser(Request $req){
+    //     $this->validate($req,[
+    //             'full_name' => 'required|min:5|max:35',
+    //             'email' => 'required|email|unique:users',
+    //             'phone' => 'required|numeric',
+    //             'password' => 'required|min:3|max:20',
+    //             're_password' => 'required|min:3|max:20|same:password',
+    //             'address' => 'required',
+    //             'role'=>"required",
+    //         ],[
+    //             'full_name.min' => ' The first name must be at least 5 characters.',
+    //             'full_name.max' => ' The first name may not be greater than 35 characters.',
+    //             'full_name.required' => ' The last name field is required.',
+    //         ]);
+    //     $user=new User;
+    //     $user->password=$req->password;
+    //     $user->full_name=$req->full_name;
+    //     $user->email=$req->email;
+    //     $user->phone=$req->phone;
+    //     $user->password=$req->password;
+    //     $user->address=$req->address;
+    //     $user->vai_tro=$req->role;
+    //     $user->save();
+    //     return redirect()->back();
+    // }
+    // public function xoauser($id){
+    //     $user= User::find($id);
+    //     $user->delete();
+    //     return redirect()->back();
+    // }
+    // public function upuser(Request $req, $id){
+    //     $user=User::find($id);
+    //     $data=$req->all();
+    //     $user->update($data);
+    //     return redirect()->back();
+    // }
 
 
     // public function viewcategory(){
@@ -150,44 +150,44 @@ class admin extends Controller
     //     $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
     //     return redirect()->back();
     // }
-    public function xoaproduct($id){
-        Product::find($id)->delete();
-        return redirect()->back();
-    }
-     public function suaproduct($id){
-        $type=ProductType::all();
-        $product=Product::find($id);
-         return view('admin.suaproduct',compact('product','type'));
-    }
-          public function upproduct(Request $req,$id){
-         $this->validate($req,[
-                'name' => 'required|min:5|max:35',
-                'description' => 'required|min:15',
-                'unit_price'=>'required|numeric|min:3',
-                'promotion_price'=>'required|numeric|min:3',
-                 'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ],[
-                'name.min' => ' The Productname name must be at least 5 characters.',
-                'name.max' => ' The Productname name may not be greater than 35 characters.',
-                'name.required' => ' The category name field is required.',
-                'description.required' =>"The Product description field is required.",
-                'description.min' =>"The category description must be at least 15 characters.",
-                "unit_price.required"=>"Unit price field is required.",
-                "promotion_price.required"=>"promotion price field is required."
-            ]);
-       $data=$req->all();
+    // public function xoaproduct($id){
+    //     Product::find($id)->delete();
+    //     return redirect()->back();
+    // }
+    //  public function suaproduct($id){
+    //     $type=ProductType::all();
+    //     $product=Product::find($id);
+    //      return view('admin.suaproduct',compact('product','type'));
+    // }
+    //       public function upproduct(Request $req,$id){
+    //      $this->validate($req,[
+    //             'name' => 'required|min:5|max:35',
+    //             'description' => 'required|min:15',
+    //             'unit_price'=>'required|numeric|min:3',
+    //             'promotion_price'=>'required|numeric|min:3',
+    //              'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    //         ],[
+    //             'name.min' => ' The Productname name must be at least 5 characters.',
+    //             'name.max' => ' The Productname name may not be greater than 35 characters.',
+    //             'name.required' => ' The category name field is required.',
+    //             'description.required' =>"The Product description field is required.",
+    //             'description.min' =>"The category description must be at least 15 characters.",
+    //             "unit_price.required"=>"Unit price field is required.",
+    //             "promotion_price.required"=>"promotion price field is required."
+    //         ]);
+    //    $data=$req->all();
     
-       $file = $req->file('image');
-       if ($file==null) {
-           $data['image']=$req->image2;
-       }else{
-            $data['image']=$file->getClientOriginalName();
-            $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
-       }
-        $p=Product::find($id);
-        $p->update($data);
-        return redirect()->back();
-    }
+    //    $file = $req->file('image');
+    //    if ($file==null) {
+    //        $data['image']=$req->image2;
+    //    }else{
+    //         $data['image']=$file->getClientOriginalName();
+    //         $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
+    //    }
+    //     $p=Product::find($id);
+    //     $p->update($data);
+    //     return redirect()->back();
+    // }
      public function order(){
         $orders=Bill::all();
         return view('admin.orderlist',compact('orders'));

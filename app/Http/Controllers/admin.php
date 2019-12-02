@@ -62,94 +62,94 @@ class admin extends Controller
     }
 
 
-    public function viewcategory(){
-        $category= ProductType::all();
-        return view('admin.categories.index',compact('category'));
-    }
-    public function themcategory(){
-        return view('admin.addcategory');
-    }
-    public function suacategory($id){
-        $category= ProductType::find($id);
-        return view('admin.suacategory',compact('category'));
-    }
-    public function xoacategory($id){
-        $category= ProductType::find($id);
-        $category->delete();
-        return redirect()->back();
-    }
-    public function addnewcategory(Request $req){
-        $this->validate($req,[
-            'name' => 'required|min:5|max:35',
-            'decription' => 'required|min:15',
-        ],[
-            'name.min' => ' The category name must be at least 5 characters.',
-            'name.max' => ' The category name may not be greater than 35 characters.',
-            'name.required' => ' The category name field is required.',
-            'decription.required' =>"The category decription field is required.",
-            'decription.min' =>"The category decription must be at least 15 characters.",
-        ]);
-        $category=new ProductType;
-        $category->name=$req->name;
-        $category->description=$req->decription;
+    // public function viewcategory(){
+    //     $category= ProductType::all();
+    //     return view('admin.categories.index',compact('category'));
+    // }
+    // public function themcategory(){
+    //     return view('admin.addcategory');
+    // }
+    // public function suacategory($id){
+    //     $category= ProductType::find($id);
+    //     return view('admin.suacategory',compact('category'));
+    // }
+    // public function xoacategory($id){
+    //     $category= ProductType::find($id);
+    //     $category->delete();
+    //     return redirect()->back();
+    // }
+    // public function addnewcategory(Request $req){
+    //     $this->validate($req,[
+    //         'name' => 'required|min:5|max:35',
+    //         'decription' => 'required|min:15',
+    //     ],[
+    //         'name.min' => ' The category name must be at least 5 characters.',
+    //         'name.max' => ' The category name may not be greater than 35 characters.',
+    //         'name.required' => ' The category name field is required.',
+    //         'decription.required' =>"The category decription field is required.",
+    //         'decription.min' =>"The category decription must be at least 15 characters.",
+    //     ]);
+    //     $category=new ProductType;
+    //     $category->name=$req->name;
+    //     $category->description=$req->decription;
         
-        $file = $req->file('image');
-        $category->image = $file->getClientOriginalName();
-        $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
-        $category->save();
-        return redirect()->back();
-    }
-    public function updatecategory(Request $req, $id){
-         $this->validate($req,[
-                'name' => 'required|min:5|max:35',
-                'decription' => 'required|min:15',
-            ],[
-                'name.min' => ' The category name must be at least 5 characters.',
-                'name.max' => ' The category name may not be greater than 35 characters.',
-                'name.required' => ' The category name field is required.',
-                'decription.required' =>"The category decription field is required.",
-                'decription.min' =>"The category decription must be at least 15 characters.",
-            ]);
-        $cate = ProductType::find($id);
-        $data = $req->all();
-        $cate->update($data);
-        return redirect()->back();
-    }
+    //     $file = $req->file('image');
+    //     $category->image = $file->getClientOriginalName();
+    //     $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
+    //     $category->save();
+    //     return redirect()->back();
+    // }
+    // public function updatecategory(Request $req, $id){
+    //      $this->validate($req,[
+    //             'name' => 'required|min:5|max:35',
+    //             'decription' => 'required|min:15',
+    //         ],[
+    //             'name.min' => ' The category name must be at least 5 characters.',
+    //             'name.max' => ' The category name may not be greater than 35 characters.',
+    //             'name.required' => ' The category name field is required.',
+    //             'decription.required' =>"The category decription field is required.",
+    //             'decription.min' =>"The category decription must be at least 15 characters.",
+    //         ]);
+    //     $cate = ProductType::find($id);
+    //     $data = $req->all();
+    //     $cate->update($data);
+    //     return redirect()->back();
+    // }
 
 
 
-    
-    public function viewproduct(){
-        $product= Product::paginate(5);
-        return view('admin.viewproduct',compact('product'));
-    }
-     public function themproduct(){
-        $type=ProductType::all();
-        return view('admin.themproduct',compact('type'));
-    }
-      public function addproduct(Request $req){
-         $this->validate($req,[
-                'name' => 'required|min:5|max:35',
-                'description' => 'required|min:15',
-                'unit_price'=>'required|numeric|min:3',
-                'promotion_price'=>'required|numeric|min:3',
-                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ],[
-                'name.min' => ' The Productname name must be at least 5 characters.',
-                'name.max' => ' The Productname name may not be greater than 35 characters.',
-                'name.required' => ' The category name field is required.',
-                'description.required' =>"The Product description field is required.",
-                'description.min' =>"The category description must be at least 15 characters.",
-                "unit_price.required"=>"Unit price field is required.",
-                "promotion_price.required"=>"promotion price field is required."
-            ]);
-       $data=$req->all();
-       $file = $req->file('image');
-       $data['image']=$file->getClientOriginalName();
-        Product::create($data);
-        $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
-        return redirect()->back();
-    }
+
+    // public function viewproduct(){
+    //     $product= Product::paginate(5);
+    //     return view('admin.viewproduct',compact('product'));
+    // }
+    //  public function themproduct(){
+    //     $type=ProductType::all();
+    //     return view('admin.themproduct',compact('type'));
+    // }
+    //   public function addproduct(Request $req){
+    //      $this->validate($req,[
+    //             'name' => 'required|min:5|max:35',
+    //             'description' => 'required|min:15',
+    //             'unit_price'=>'required|numeric|min:3',
+    //             'promotion_price'=>'required|numeric|min:3',
+    //              'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    //         ],[
+    //             'name.min' => ' The Productname name must be at least 5 characters.',
+    //             'name.max' => ' The Productname name may not be greater than 35 characters.',
+    //             'name.required' => ' The category name field is required.',
+    //             'description.required' =>"The Product description field is required.",
+    //             'description.min' =>"The category description must be at least 15 characters.",
+    //             "unit_price.required"=>"Unit price field is required.",
+    //             "promotion_price.required"=>"promotion price field is required."
+    //         ]);
+    //    $data=$req->all();
+    //    $file = $req->file('image');
+    //    $data['image']=$file->getClientOriginalName();
+    //     Product::create($data);
+    //     $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
+    //     return redirect()->back();
+    // }
     public function xoaproduct($id){
         Product::find($id)->delete();
         return redirect()->back();

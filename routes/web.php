@@ -16,6 +16,12 @@ Route::get('/',[
 	'as'=>'trang-chu',
 	'uses'=>'PageController@getIndex'	
 ]);
+Route::get('cntk',[
+	'as'=>'cntk',
+	'uses'=>'PageController@cntk']);
+Route::post('save_cntk/{id}','PageController@save_cntk')->name('save_cntk');
+Route::get('doi_mk','PageController@doi_mk')->name('doi_mk');
+Route::post('save_doi_mk','PageController@save_doi_mk')->name('save_doi_mk');
 Route::get('loaisanpham/{type}',[
 	'as'=>'loai_san_pham',
 	'uses'=>'PageController@getloaisp']);

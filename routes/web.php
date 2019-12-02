@@ -48,10 +48,10 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::get('dathang','Clients\CartController@dathang')->name('dathang');
 		Route::post('dathang2','Clients\CartController@postcheckout')->name('dathang2');
 		// Profile
-		Route::get('cntk','ProfileController@cntk')->name('cntk');
-		Route::post('save_cntk/{id}','ProfileController@save_cntk')->name('save_cntk');
-		Route::get('doi_mk','ProfileController@doi_mk')->name('doi_mk');
-		Route::post('save_doi_mk','ProfileController@save_doi_mk')->name('save_doi_mk');
+		Route::get('cntk','Clients\ProfileController@cntk')->name('cntk');
+		Route::post('save_cntk/{id}','Clients\ProfileController@save_cntk')->name('save_cntk');
+		Route::get('doi_mk','Clients\ProfileController@doi_mk')->name('doi_mk');
+		Route::post('save_doi_mk','Clients\ProfileController@save_doi_mk')->name('save_doi_mk');
 	});
 });
 

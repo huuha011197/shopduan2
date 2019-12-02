@@ -37,7 +37,7 @@ class HomeController extends Controller
         $items = Product::where([ 
             ['name', 'LIKE', '%'. $keyword. '%'],
         ])->paginate(6);
-        return view('page.search',compact('items', 'keyword'));
+        return view('clients.search',compact('items', 'keyword'));
     }
     
     public function lienhe(){

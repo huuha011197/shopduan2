@@ -26,26 +26,13 @@ Route::group(['namespace' => 'Clients', 'middleware' => 'user'], function(){
 	Route::post('save_cntk/{id}','ProfileController@save_cntk')->name('save_cntk');
 	Route::get('doi_mk','ProfileController@doi_mk')->name('doi_mk');
 	Route::post('save_doi_mk','ProfileController@save_doi_mk')->name('save_doi_mk');
+
+	// Cart
+	Route::get('add-to-cart/{id}','CartController@getAddtoCart')->name('themgiohang');
+	Route::get('del-cart/{id}','CartController@delcart')->name('xoagiohang');
+	Route::get('dathang','CartController@dathang')->name('dathang');
+	Route::post('dathang2','CartController@postcheckout')->name('dathang2');
 });
-
-
-// Cart
-Route::get('add-to-cart/{id}',[
-	'as'=>'themgiohang',
-	'uses'=>'PageController@getAddtoCart'
-	]);
-Route::get('del-cart/{id}',[
-	"as"=>'xoagiohang',
-	'uses'=>'PageController@delcart',
-	]);
-Route::get('dathang',[
-	"as"=>'dathang',
-	'uses'=>'PageController@dathang',
-	]);
-Route::post('dathang2',[
-	'as'=>'dathang2',
-	'uses'=>'PageController@postcheckout',
-]);
 
 Route::get('login','PageController@login')->name('login')->middleware('check');
 Route::get('register','PageController@register')->name('register');

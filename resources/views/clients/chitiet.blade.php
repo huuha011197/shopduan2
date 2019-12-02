@@ -63,15 +63,55 @@
 					<div class="space40">&nbsp;</div>
 					<div class="woocommerce-tabs">
 						<ul class="tabs">
-							<li><a href="#tab-description">Description</a></li>
-							<li><a href="#tab-reviews">Reviews (0)</a></li>
+							<li><a href="#tab-description">Chi tiết</a></li>
+							<li><a href="#tab-reviews">Bình luận ({{count($sp->comments)}})</a></li>
 						</ul>
 
 						<div class="panel" id="tab-description">
 							<p>{{$sp->description}}</p>
 						</div>
 						<div class="panel" id="tab-reviews">
-							<p>No Reviews</p>
+							{{-- <p>No Reviews</p> --}}
+							<div class="">
+								<h5>Nội dung</h5>
+								<div class="dropdown-content dis-none p-t-15 p-b-23" style="display: block;">
+									<form action="{{Route('comment')}}" method="post">
+										@csrf								
+										<div class="form-group">
+										   <textarea name="content" placeholder="Nhập nội dung bình luận"></textarea>
+										   <input type="hidden" name="status" value="1">
+										   <input type="hidden" name="product_id" value="{{$sp->id}}">
+										</div>
+										<button type="submit" class="btn btn-primary btn-small mb-3">Submit</button>
+									</form>
+									
+
+									@foreach ($sp->comments as $comment)
+										<div class="card mb-2">
+											<div class="card-body">
+												<div class="row">
+													<div class="col-md-2">
+														<img src="{{asset('source/image/user.png')}}" class="img img-rounded img-fluid">
+														
+													</div>
+													<div class="col-md-6">
+														<p>
+															<a class="float-left" href=""><strong>{{$comment->user->name}}</strong></a>
+														</p>
+														<div class="clearfix"></div>
+														<p>{{ $comment->content}}</p>
+													</div>
+													<div class="col-md-4">
+														<p>{{ $comment->created_at}}</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									@endforeach
+
+									
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="space50">&nbsp;</div>

@@ -19,6 +19,7 @@ Route::group(['namespace' => 'Clients'], function(){
 	Route::get('ctsanpham/{id}', 'HomeController@ctsp')->name('ctsp');
 	Route::post('search', 'HomeController@search')->name('search');
 	Route::get('lienhe', 'HomeController@lienhe')->name('lien_he');
+	Route::post('lienhe', 'HomeController@postLienhe')->name('postLienhe');
 	Route::get('gioithieu', 'HomeController@gioithieu')->name('gioithieu');
 	Route::post('comment', 'HomeController@comment')->name('comment')->middleware('user');;
 });

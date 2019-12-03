@@ -7,6 +7,7 @@ use App\Slide;
 use App\Product;
 use App\ProductType;
 use App\User;
+use App\Contact;
 use App\Comment;
 use Auth;
 use App\Http\Controllers\Controller;
@@ -45,6 +46,15 @@ class HomeController extends Controller
     	return view('clients.lienhe');
     }
 
+    public function postLienhe(Request $request)
+    {
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+        Contact::create($request->all());
+        return back()->with('success', 'Send contact successfully!');
+    }
     public function gioithieu(){
     	return view('clients.gioithieu');
     }

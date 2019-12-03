@@ -63,7 +63,7 @@
 					<div class="space40">&nbsp;</div>
 					<div class="woocommerce-tabs">
 						<ul class="tabs">
-							<li><a href="#tab-description">Chi tiết</a></li>
+							<li><a href="#tab-description">Mô tả</a></li>
 							<li><a href="#tab-reviews">Bình luận ({{count($sp->comments)}})</a></li>
 						</ul>
 
@@ -87,6 +87,7 @@
 									
 
 									@foreach ($sp->comments as $comment)
+									@if ($comment->status !== 0)
 										<div class="card mb-2">
 											<div class="card-body">
 												<div class="row">
@@ -107,6 +108,7 @@
 												</div>
 											</div>
 										</div>
+									@endif
 									@endforeach
 
 									

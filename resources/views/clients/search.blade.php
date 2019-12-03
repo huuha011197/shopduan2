@@ -1,4 +1,7 @@
 @extends('master')
+@section('title')
+	Tìm kiếm sản phẩm
+@endsection
 @section('content')
 <div class="fullwidthbanner-container">
 				

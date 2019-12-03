@@ -1,4 +1,7 @@
 @extends('admin.home')
+@section('title')
+	Tài khoản
+@endsection
 @section('content')
 <!-- End Navbar -->
 <div class="content">

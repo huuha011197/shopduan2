@@ -38,6 +38,8 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::resource('user', 'UserController');
 		Route::resource('category', 'CategoryController');
 		Route::resource('product', 'ProductController');
+		Route::resource('comment', 'CommentController');
+		Route::get('comment/status/{id}','CommentController@status')->name('comment.status');
 		Route::get('order','admin@order')->name('order');
 		Route::get('customer/{id}','admin@customer')->name('customer');
 		Route::get('bill/{id}','admin@bill')->name('bill');

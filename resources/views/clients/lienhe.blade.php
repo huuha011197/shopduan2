@@ -32,18 +32,22 @@
 					nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 					mollit ani m id est laborum.</p>
 				<div class="space20">&nbsp;</div>
-				<form action="#" method="post" class="contact-form">
+				<div class="row">
+					@include('errors.errors')
+				</div>
+				<form action="{{route('postLienhe')}}" method="post" class="contact-form">
+					@csrf
 					<div class="form-block">
-						<input name="your-name" type="text" placeholder="Your Name (required)">
+						<input name="name" type="text" placeholder="Your Name (required)" value="{{ old('name') }}">
 					</div>
 					<div class="form-block">
-						<input name="your-email" type="email" placeholder="Your Email (required)">
+						<input name="email" type="email" placeholder="Your Email (required)" value="{{ old('email') }}">
 					</div>
 					<div class="form-block">
-						<input name="your-subject" type="text" placeholder="Subject">
+						<input name="subject" type="text" placeholder="Subject" value="{{ old('subject') }}">
 					</div>
 					<div class="form-block">
-						<textarea name="your-message" placeholder="Your Message"></textarea>
+						<textarea name="message" placeholder="Your Message">{{ old('message') }}</textarea>
 					</div>
 					<div class="form-block">
 						<button type="submit" class="beta-btn primary">Send Message <i

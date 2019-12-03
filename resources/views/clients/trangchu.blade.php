@@ -1,4 +1,7 @@
 @extends('master')
+@section('title')
+	Trang chủ
+@endsection
 @section('content')
 <div class="fullwidthbanner-container">
 	<div class="fullwidthbanner">

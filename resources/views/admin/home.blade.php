@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Admin</title>
+  <title>@yield('title')</title>
   <base href="{{asset('')}}">
   <!-- Required meta tags -->
   <meta charset="utf-8">

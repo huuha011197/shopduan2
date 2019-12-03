@@ -1,4 +1,7 @@
 @extends('admin.home')
+@section('title')
+	Sửa tài khoản
+@endsection
 @section('content')
 <div class="content">
         <div class="container-fluid">

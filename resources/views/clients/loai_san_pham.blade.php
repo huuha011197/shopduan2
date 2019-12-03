@@ -1,4 +1,7 @@
 @extends('master')
+@section('title')
+	Danh mục sản phẩm 
+@endsection
 @section('content')
 <div class="inner-header">
 	<div class="container">

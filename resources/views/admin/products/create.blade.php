@@ -1,4 +1,7 @@
 @extends('admin.home')
+@section('title')
+	Thêm sản phẩm
+@endsection
 @section('content')
 <div class="content">
   <div class="container-fluid">

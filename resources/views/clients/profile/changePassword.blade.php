@@ -1,4 +1,7 @@
 @extends('master')
+@section('title')
+	Thay đỏi mật khẩu
+@endsection
 @section('content')
 	<div class="inner-header">
 		<div class="container">

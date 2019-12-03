@@ -1,4 +1,7 @@
 @extends('master')
+@section('title')
+	Đặt hàng
+@endsection
 @section('content')
 	<div class="inner-header">
 		<div class="container">

@@ -798,7 +798,7 @@ padding-right:10px
 }
 
 strong {
-color:#000
+color:red;
 }
 
 input[type="text"],input[type="email"],input[type="url"],textarea {
@@ -5256,4 +5256,54 @@ form.example::after {
   content: "";
   clear: both;
   display: table;
+}
+.summary{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 40px;
+}
+.description #toc{
+    padding: 30px 20px 20px;
+    border: 1px solid #ebebeb;
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+    background: #fdfdfd;
+    box-sizing: border-box;
+}
+.description #toc #toc-header{
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 22px;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 0px 15px;
+    height: 28px;
+}
+.news_detail .description p, .news_detail .description ul li, .news_detail .description div, .description h2, .description h3{
+    margin-bottom: 12px;
+}
+.description ul li{
+    padding-left: 29px !important;
+    position: relative;
+}
+.description #toc ul li a{
+    color: red;
+}
+.news_detail .description{
+    line-height: 28px;
+    font-size: 20px;
+}
+.title{
+    font-weight: normal;
+    margin-bottom: 28px;
+    font-size: 28px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
 }

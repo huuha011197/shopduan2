@@ -17,8 +17,9 @@ class HomeController extends Controller
     public function getIndex(){
     	$slide = Slide::all();
     	$new_p = Product::where('new', 1)->paginate(4);
-    	$pro_sale = Product::where('promotion_price', '<>', 0)->paginate(8);
-    	return view('clients.trangchu', compact('slide', 'new_p', 'pro_sale'));
+        $pro_sale = Product::where('promotion_price', '<>', 0)->paginate(8);
+        $slide = Slide::all();
+    	return view('clients.trangchu', compact('slide', 'new_p', 'pro_sale', 'slide'));
     }
 
     public function getloaisp($type){

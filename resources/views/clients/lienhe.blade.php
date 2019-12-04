@@ -6,7 +6,7 @@
 <div class="inner-header">
 	<div class="container">
 		<div class="pull-left">
-			<h6 class="inner-title">Contacts</h6>
+			{{-- <h6 class="inner-title">Contacts</h6> --}}
 		</div>
 		<div class="pull-right">
 			<div class="beta-breadcrumb font-large">
@@ -28,12 +28,9 @@
 		<div class="space50">&nbsp;</div>
 		<div class="row">
 			<div class="col-sm-8">
-				<h2>Contact Form</h2>
+				<h2>Liên Hệ</h2>
 				<div class="space20">&nbsp;</div>
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-					nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-					mollit ani m id est laborum.</p>
+			
 				<div class="space20">&nbsp;</div>
 				<div class="row">
 					@include('errors.errors')
@@ -41,16 +38,16 @@
 				<form action="{{route('postLienhe')}}" method="post" class="contact-form">
 					@csrf
 					<div class="form-block">
-						<input name="name" type="text" placeholder="Your Name (required)" value="{{ old('name') }}">
+						<input name="name" type="text" placeholder="Tên của bạn (required)" value="{{ old('name') }}">
 					</div>
 					<div class="form-block">
-						<input name="email" type="email" placeholder="Your Email (required)" value="{{ old('email') }}">
+						<input name="email" type="email" placeholder="Email của bạn (required)" value="{{ old('email') }}">
 					</div>
 					<div class="form-block">
-						<input name="subject" type="text" placeholder="Subject" value="{{ old('subject') }}">
+						<input name="subject" type="text" placeholder="Tiêu đề" value="{{ old('subject') }}">
 					</div>
 					<div class="form-block">
-						<textarea name="message" placeholder="Your Message">{{ old('message') }}</textarea>
+						<textarea name="message" placeholder="Nội dung">{{ old('message') }}</textarea>
 					</div>
 					<div class="form-block">
 						<button type="submit" class="beta-btn primary">Send Message <i
@@ -59,29 +56,23 @@
 				</form>
 			</div>
 			<div class="col-sm-4">
-				<h2>Contact Information</h2>
+				<h2>Thông tin liên lạc</h2>
 				<div class="space20">&nbsp;</div>
 
-				<h6 class="contact-title">Address</h6>
+				<h6 class="contact-title">Địa chỉ nhà</h6>
 				<p>
-					Suite 127 / 267 – 277 Brussel St,<br>
-					62 Croydon, NYC <br>
-					Newyork
+					151 Âu cơ - Liên chiểu - Đà nẵng<br>
+					<a href="">Email: khanhtnpd02435@fpt.edu.vn <br></a>
+					Việt nam
 				</p>
 				<div class="space20">&nbsp;</div>
-				<h6 class="contact-title">Business Enquiries</h6>
+				<h6 class="contact-title">Liên hệ</h6>
 				<p>
-					Doloremque laudantium, totam rem aperiam, <br>
-					inventore veritatio beatae. <br>
-					<a href="mailto:biz@betadesign.com">biz@betadesign.com</a>
+					Phone 1: 0354389539 <br>
+					Phone 2: 0984762038 <br>
+					
 				</p>
-				<div class="space20">&nbsp;</div>
-				<h6 class="contact-title">Employment</h6>
-				<p>
-					We’re always looking for talented persons to <br>
-					join our team. <br>
-					<a href="hr@betadesign.com">hr@betadesign.com</a>
-				</p>
+		
 			</div>
 		</div>
 	</div> <!-- #content -->

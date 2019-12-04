@@ -1,6 +1,6 @@
 @extends('master')
 @section('title')
-	Liên hệ
+Liên hệ
 @endsection
 @section('content')
 <div class="inner-header">
@@ -30,7 +30,7 @@
 			<div class="col-sm-8">
 				<h2>Liên Hệ</h2>
 				<div class="space20">&nbsp;</div>
-			
+
 				<div class="space20">&nbsp;</div>
 				<div class="row">
 					@include('errors.errors')
@@ -41,7 +41,8 @@
 						<input name="name" type="text" placeholder="Tên của bạn (required)" value="{{ old('name') }}">
 					</div>
 					<div class="form-block">
-						<input name="email" type="email" placeholder="Email của bạn (required)" value="{{ old('email') }}">
+						<input name="email" type="email" placeholder="Email của bạn (required)"
+							value="{{ old('email') }}">
 					</div>
 					<div class="form-block">
 						<input name="subject" type="text" placeholder="Tiêu đề" value="{{ old('subject') }}">
@@ -70,9 +71,9 @@
 				<p>
 					Phone 1: 0354389539 <br>
 					Phone 2: 0984762038 <br>
-					
+
 				</p>
-		
+
 			</div>
 		</div>
 	</div> <!-- #content -->

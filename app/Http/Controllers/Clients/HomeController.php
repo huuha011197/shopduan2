@@ -10,6 +10,7 @@ use App\User;
 use App\Contact;
 use App\Comment;
 use Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -53,7 +54,13 @@ class HomeController extends Controller
             'name' => 'required',
             'email' => 'required',
         ]);
-        Contact::create($request->all());
+        $contact = Contact::create($request->all());
+
+        $data  = ['name' => $request->name, 'email' => $request->email, 'subject' => $request->subject, 'messages' => $request->message];
+        Mail::send('clients.mailct', $data, function($message){
+            $message->from('trandinhdat9b@gmail.com', 'Khách hàng');
+            $message->to('trandinhdatb4@gmail.com', 'Visitor')->subject('Liên hệ với shop!');
+        });
         return back()->with('success', 'Send contact successfully!');
     }
     public function gioithieu(){

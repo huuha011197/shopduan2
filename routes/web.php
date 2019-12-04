@@ -10,7 +10,6 @@ use  App\Http\Middleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Auth::routes();
 Route::group(['namespace' => 'Clients'], function(){
 	// Homepage
@@ -23,7 +22,6 @@ Route::group(['namespace' => 'Clients'], function(){
 	Route::get('gioithieu', 'HomeController@gioithieu')->name('gioithieu');
 	Route::post('comment', 'HomeController@comment')->name('comment')->middleware('user');;
 });
-
 Route::group(['namespace' => 'Auth'], function(){
 	// Profile
 	Route::get('login','AuthController@login')->name('login')->middleware('check');
@@ -32,7 +30,6 @@ Route::group(['namespace' => 'Auth'], function(){
 	Route::post('getlogin','AuthController@getlogin')->name('getlogin');
 	Route::get('logout','AuthController@logout')->name('logout');
 });
-
 Route::group(['middleware' => ['auth']], function () {	
 	Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
 		Route::get('getadmin','admin@getadmin')->name('getadmin');
@@ -60,6 +57,3 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::post('save_doi_mk','Clients\ProfileController@save_doi_mk')->name('save_doi_mk');
 	});
 });
-
-
-

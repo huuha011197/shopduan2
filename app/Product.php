@@ -21,7 +21,7 @@ class Product extends Model
     }
 
 
-    public function comments()
+    public function comment()
     {
         return $this->hasMany(Comment::class);
     }

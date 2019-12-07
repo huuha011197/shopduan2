@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
             $loai_sp= ProductType::all();
             $view->with('loai_sp',$loai_sp);
         });
-        view()->composer('clients.common.header',function($view){
+        view()->composer(['clients.common.header', 'clients.pages.checkout'],function($view){
             if (Session('cart')) {
                $oldCart=Session::get('cart');
                $cart=new Cart($oldCart);

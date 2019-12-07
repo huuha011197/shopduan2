@@ -84,11 +84,21 @@ class CommentController extends Controller
         return back()->with('success', 'Delete comment successfully!');
     }
 
-    public function status(Request $request, $id){
+    public function status1($id){
         $comment = Comment::findOrFail($id);
-        if ($request->status !== 0) {
+        // dd($comment->status);
+        if ($comment->status == 0) {
+            $comment->status = 1;
+        }
+        $comment->update();
+        return redirect()->back()->with('success', 'Comment ' . $id . ' has been processed');  
+    }
+    public function status2($id){
+        $comment = Comment::findOrFail($id);
+        // dd($comment->status);
+        if ($comment->status == 1) {
             $comment->status = 0;
-        } 
+        }
         $comment->update();
         return redirect()->back()->with('success', 'Comment ' . $id . ' has been processed');  
     }

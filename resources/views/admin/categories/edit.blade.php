@@ -11,18 +11,10 @@
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Edit Category</h4>
                   <p class="card-category">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
                   </p>
                 </div>
                 <div class="card-body">
+                    @include('errors.errors')
                   <form method="post" action="{{route('category.update', $category->id)}}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
@@ -46,11 +38,18 @@
                         </div>
                       </div>
                       <div class="col-md-9">
-                        <div class="form-group bmd-form-group">
-                          <label class="bmd-label-floating">Image</label>
+                          <div class="form-group bmd-form-group">
+                            <img style="height: 200px;width: 200px" src="source/image/product/{{$category->image}}">
+                            <br>
+                            {{$category->image}}
+                            <input type="" name="image2" value="{{$category->image}}" hidden="">
+                          </div>
                         </div>
-                        <input type="file" name="image" style="margin-left:100px" value="{{$category->image}}">
-                      </div>
+                        <div class="row">
+                          <div class="col-md-9">
+                            <input type="file" name="image" style="margin-left:100px ">
+                          </div>
+                        </div>
 
                     <button type="submit" class="btn btn-primary pull-right">Update</button>
                     <div class="clearfix"></div>

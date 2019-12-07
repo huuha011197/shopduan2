@@ -16,24 +16,31 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     public function getIndex(){
-    	$slide = Slide::all();
-    	$new_p = Product::where('new', 1)->paginate(4);
-        $pro_sale = Product::where('promotion_price', '<>', 0)->paginate(8);
-        $slide = Slide::all();
-    	return view('clients.trangchu', compact('slide', 'new_p', 'pro_sale', 'slide'));
+        $slides = Slide::all();
+        $product_types = ProductType::take(3)->get();
+    	$new_products = Product::orderBy('id', 'desc')->paginate(4);
+        $sale_products = Product::where('promotion_price', '<>', 0)->paginate(8);
+    	return view('clients.pages.index', compact('slides', 'new_products', 'sale_products', 'product_types'));
     }
 
-    public function getloaisp($type){
-    	$sp_theo_loai= Product::where('id_type', $type)->paginate(6);
-    	$loai = ProductType::all();
-    	$lsp = ProductType::where('id', $type)->first();
-    	return view('clients.loai_san_pham', compact('sp_theo_loai', 'loai', 'lsp'));
+    public function getloaisp($id = 'all'){
+        $categories = ProductType::all();
+        if ($id != 'all') {
+            $cate_products = Product::where('id_type', $id)->get();
+        } 
+        else {
+            $cate_products = Product::all();
+        }
+    	return view('clients.pages.categories',compact('categories', 'cate_products'));
     }
 
     public function ctsp($id){
-        $sp = Product::findOrFail($id);
-    	$sptt = Product::where('id_type', $sp->id_type)->paginate(3);
-    	return view('clients.chitiet',compact('sp', 'sptt'));
+        $product_detail = Product::with('product_type')->findOrFail($id);
+        $product_type = $product_detail->product_type;
+        // dd($product_type);
+        $related_products = Product::where('id_type', $product_detail->id_type)->get();
+        // dd($related_products);
+        return view('clients.pages.productDetail',compact('product_detail', 'product_type', 'related_products'));
     }
 
     public function search(Request $req){
@@ -41,11 +48,11 @@ class HomeController extends Controller
         $items = Product::where([ 
             ['name', 'LIKE', '%'. $keyword. '%'],
         ])->paginate(6);
-        return view('clients.search',compact('items', 'keyword'));
+        return view('clients.pages.search',compact('items', 'keyword'));
     }
     
     public function lienhe(){
-    	return view('clients.lienhe');
+    	return view('clients.pages.contact');
     }
 
     public function postLienhe(Request $request)
@@ -57,14 +64,14 @@ class HomeController extends Controller
         $contact = Contact::create($request->all());
 
         $data  = ['name' => $request->name, 'email' => $request->email, 'subject' => $request->subject, 'messages' => $request->message];
-        Mail::send('clients.mailct', $data, function($message){
+        Mail::send('clients.pages.mailct', $data, function($message){
             $message->from('trandinhdat9b@gmail.com', 'Khách hàng');
             $message->to('trandinhdatb4@gmail.com', 'Visitor')->subject('Liên hệ với shop!');
         });
         return back()->with('success', 'Send contact successfully!');
     }
     public function gioithieu(){
-    	return view('clients.gioithieu');
+    	return view('clients.pages.about');
     }
 
     public function comment(Request $request)

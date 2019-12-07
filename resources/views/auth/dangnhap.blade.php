@@ -1,4 +1,7 @@
-		@extends('master')
+@extends('clients.layouts.master')
+@section('title')
+Liên hệ
+@endsection
 @section('content')
 <script src="source/assets/dest/js/jqueri.js"></script>
 	<div class="inner-header">

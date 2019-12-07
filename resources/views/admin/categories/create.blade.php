@@ -11,18 +11,11 @@
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">New Category</h4>
                   <p class="card-category">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                   
                   </p>
                 </div>
                 <div class="card-body">
+                    @include('errors.errors')
                   <form method="post" action="{{route('category.store')}}" enctype="multipart/form-data">
                     @csrf
                     @method('POST')

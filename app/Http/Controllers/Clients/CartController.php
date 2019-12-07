@@ -41,9 +41,13 @@ class CartController extends Controller
     }
 
     public function dathang(){
-    	return view('clients.orders.dathang');
+    	return view('clients.pages.checkout');
     }
 
+    public function viewCart()
+    {
+        return  view('clients.pages.order');
+    }
     public function postcheckout(Request $req){
         $cart = Session::get("cart");
         $customer= new Customer;

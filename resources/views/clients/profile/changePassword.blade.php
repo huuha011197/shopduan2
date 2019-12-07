@@ -1,6 +1,6 @@
-@extends('master')
+@extends('clients.layouts.master')
 @section('title')
-	Thay đỏi mật khẩu
+Thay đổi mật khẩu
 @endsection
 @section('content')
 	<div class="inner-header">

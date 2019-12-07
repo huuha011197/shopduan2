@@ -14,7 +14,7 @@ Auth::routes();
 Route::group(['namespace' => 'Clients'], function(){
 	// Homepage
 	Route::get('/', 'HomeController@getIndex')->name('trang-chu');
-	Route::get('loaisanpham/{type}', 'HomeController@getloaisp')->name('loai_san_pham');
+	Route::get('loaisanpham/{id}', 'HomeController@getloaisp')->name('loai_san_pham');
 	Route::get('ctsanpham/{id}', 'HomeController@ctsp')->name('ctsp');
 	Route::post('search', 'HomeController@search')->name('search');
 	Route::get('lienhe', 'HomeController@lienhe')->name('lien_he');
@@ -37,7 +37,8 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::resource('category', 'CategoryController');
 		Route::resource('product', 'ProductController');
 		Route::resource('comment', 'CommentController');
-		Route::get('comment/status/{id}','CommentController@status')->name('comment.status');
+		Route::get('comment/status1/{id}','CommentController@status1')->name('comment.status1');
+		Route::get('comment/status2/{id}','CommentController@status2')->name('comment.status2');
 		Route::get('order','admin@order')->name('order');
 		Route::get('customer/{id}','admin@customer')->name('customer');
 		Route::get('bill/{id}','admin@bill')->name('bill');
@@ -47,6 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::group(['middleware' => 'user'], function(){
 		// Cart
 		Route::get('add-to-cart/{id}','Clients\CartController@getAddtoCart')->name('themgiohang');
+		Route::get('viewcart','Clients\CartController@viewCart')->name('viewcart');
 		Route::get('del-cart/{id}','Clients\CartController@delcart')->name('xoagiohang');
 		Route::get('dathang','Clients\CartController@dathang')->name('dathang');
 		Route::post('dathang2','Clients\CartController@postcheckout')->name('dathang2');

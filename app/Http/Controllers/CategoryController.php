@@ -101,17 +101,19 @@ class CategoryController extends Controller
             'description.required' =>"The category description field is required.",
             'description.min' =>"The category description must be at least 15 characters.",
         ]);
-    $cate = ProductType::find($id);
     $data = $request->all();
-
-    $file = $request->file('image');
-        if ($file == null) {
-           $data['image'] = $request->image;
-        }else{
-            $data['image']=$file->getClientOriginalName();
-            $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
-        }
-    $cate->update($data);
+        $file = $request->file('image');
+            if ($file == null) {
+                $data['image'] = $request->image;
+            }else{
+                    $data['image'] = $file->getClientOriginalName();
+                    $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
+            }
+        $cate = ProductType::findOrFail($id);
+        $cate->name = $request->name;
+        $cate->description = $request->description;
+        $cate->image = $data['image'];
+        $cate->save();
     return redirect()->back()->with('success', 'Update category successfully!');
     }
 

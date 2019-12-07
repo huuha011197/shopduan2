@@ -1,4 +1,4 @@
-@extends('master')
+@extends('clients.layouts.master')
 @section('title')
 	Cập nhật thông tin
 @endsection

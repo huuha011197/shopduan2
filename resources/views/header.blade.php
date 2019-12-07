@@ -96,7 +96,8 @@
 				<div class="clearfix"></div>
 			</div> <!-- .container -->
 		</div> <!-- .header-body -->
-		<div class="header-bottom" style=" background-color: black; background-image: linear-gradient(0deg, white, black); ;">
+		<div class="header-bottom" style=" background-color: black;
+		background-image: linear-gradient(0deg, #271d0e, #14121f);">
 			<div class="container">
 				<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 				<div class="visible-xs clearfix"></div>

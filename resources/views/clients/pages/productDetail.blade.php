@@ -38,7 +38,7 @@ Sản phẩm chi tiết
 					</div>
 				</div>
 
-				{{-- <div class="wrap-dropdown-content bo7 p-t-15 p-b-14 active-dropdown-content">
+				 <div class="wrap-dropdown-content bo7 p-t-15 p-b-14 active-dropdown-content">
 						<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
 							Bình luận
 							<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
@@ -49,6 +49,8 @@ Sản phẩm chi tiết
 							<form action="{{Route('comment', $product_detail->id)}}" method="post">
 								@csrf
 								<div class="form-group">
+									<input type="hidden" name="product_id" value="{{$product_detail->id}}">
+									<input type="hidden" name="status" value="1">
 								  <input type="text"
 									class="form-control" name="content" id="" aria-describedby="helpId" placeholder="Nhận xét của bạn ...">
 								</div>
@@ -59,21 +61,22 @@ Sản phẩm chi tiết
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-2">
-												<img src="{{asset('client/images/'. Auth::user()->profile->avatar )}}" class="img img-rounded img-fluid">
-												{{-- <p class="text-secondary text-center">{{$item->created_at}}</p> --}}
-											{{-- </div>
+												<img src="{{asset('client/images/user.png')}}" class="img img-rounded img-fluid">
+												 
+											 </div>
 											<div class="col-md-10">
 												<p>
 													<a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>{{Auth::user()->name}}</strong></a>
 												<div class="clearfix"></div>
 												<p>{{$item->content}}</p>
+												<p class="text-secondary text-center" style="display: block; float: right;">{{$item->created_at}}</p>
 											</div>
 										</div>
 									</div>
 								</div>
 							@endforeach
 						</div>
-					</div> --}} 
+					</div> 
 			</div>
 
 			<div class="w-size14 p-t-30 respon5">

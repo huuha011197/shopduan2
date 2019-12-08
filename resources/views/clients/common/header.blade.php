@@ -151,14 +151,14 @@
 					<div class="header-wrapicon2">
 						<img src="{{asset('client/images/icons/icon-header-02.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
 						<span class="header-icons-noti">
-								@if(Session('cart')->totalQty>0){{Session('cart')->totalQty}}
+								{{-- @if(Session('cart')->totalQty>0){{Session('cart')->totalQty}}
 								@else
 									0
-								@endif
+								@endif --}}
 							</span>
 
 						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
+						{{-- <div class="header-cart header-dropdown">
 							@foreach($product_cart as $product)
 							<ul class="header-cart-wrapitem">
 								<li class="header-cart-item">
@@ -198,7 +198,7 @@
 									</a>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 

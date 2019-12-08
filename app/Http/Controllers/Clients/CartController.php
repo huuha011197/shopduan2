@@ -41,7 +41,9 @@ class CartController extends Controller
     }
 
     public function dathang(){
-    	return view('clients.pages.checkout');
+        $cart = Session::get("cart");
+        // dd($cart->items);
+    	return view('clients.pages.checkout', compact('cart'));
     }
 
     public function viewCart()
@@ -78,6 +80,7 @@ class CartController extends Controller
             $bill_detail->product_name = $value['item']['name'];
             $bill_detail->save();
         }
+        
        Session::forget('cart');
        return redirect()->back()->with('thongbao', 'Đặt hàng thành công');
     }

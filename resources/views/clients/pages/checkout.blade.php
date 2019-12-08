@@ -59,21 +59,43 @@
                             <div class="your-order-item">
                                 <div>
                                 <!--  one item	 -->
-                                                                                                            <div class="media">
+                                    <div class="media">
                                         <div class="media-body">
-                                            <p class="font-large">ĐỒNG HỒ EPOS SWISS E-7000.701.22.16.26</p>
-                                            <span class="color-gray your-order-info"> Đơn giá: 5,100,000</span>
-                                            <span class="color-gray your-order-info"> Số lượng: 1</span>
-                                            <span class="color-gray your-order-info"> Thành tiền: 5,100,000</span>
+                                            {{-- <p class="font-large">ĐỒNG HỒ EPOS SWISS E-7000.701.22.16.26</p>
+                                            <span class="color-gray your-order-info"> Đơn giá: {{$cart->items->price}}</span>
+                                            <span class="color-gray your-order-info"> Số lượng: {{$cart->items->qty}}</span>
+                                            <span class="color-gray your-order-info"> Thành tiền: {{$cart->items->price * $cart->items->qty }} đ </span> --}}
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Tên sản phẩm</th>
+                                                        <th>Só lượng</th>
+                                                        <th>Đơn giá</th>
+                                                        <th>Thành tiền</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($cart->items as $key => $item)
+                                                    <tr>
+                                                        <td>{{$key}}</td>
+                                                        <td scope="row">{{$item['item']->name}}</td>
+                                                        <td>{{$item['qty']}}</td>
+                                                        <td>{{number_format($item['price'])}} đ</td>
+                                                        <td>{{ number_format($item['price'] * $item['qty'])}} đ</td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 <!-- end one item -->
-                                                                                                        </div>
+                                </div>
                                 <div class="clearfix"></div>
                             </div>
                                                         <div class="your-order-item">
                                 <div class="pull-left"><p class="your-order-f18">Tổng tiền:</p></div>
-                                <div class="pull-right"><h5 class="color-black">5,100,000 VNĐ</h5></div>
+                                <div class="pull-right"><h5 class="color-black"> {{number_format(Session('cart')->totalPrice)}} đ</h5></div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>

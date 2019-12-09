@@ -40,7 +40,7 @@
                           {{$ca->name}}
                         </td>
                         <td>
-                          <img style="height: 100px;width: 100px" src="source/image/product/{{$ca->image}}">
+                          <img style="height: 100px;" src="source/image/product/{{$ca->image}}">
                         </td>
                         <td>
                           {{$ca->unit_price}}

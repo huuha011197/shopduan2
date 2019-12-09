@@ -85,7 +85,7 @@
               </div>
               <div class="col-md-9">
                 <div class="form-group bmd-form-group">
-                  <img style="height: 200px;width: 200px" src="source/image/product/{{$product->image}}">
+                  <img style="height: 200px;width: auto ;" src="source/image/product/{{$product->image}}">
                   <br>
                   {{$product->image}}
                   <input type="" name="image2" value="{{$product->image}}" hidden="">

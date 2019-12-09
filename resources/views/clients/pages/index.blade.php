@@ -50,7 +50,7 @@ Home
 
 					<!-- block1 -->
 					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="{{asset('client/images/banners/anhd6.jpg')}}" alt="IMG-BENNER">
+						<img src="{{asset('client/images/banners/anhd4.jpg')}}" alt="IMG-BENNER">
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
@@ -64,7 +64,7 @@ Home
 				<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
 					<!-- block1 -->
 					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="{{asset('client/images/banners/anhd4.jpg')}}" alt="IMG-BENNER">
+						<img src="{{asset('client/images/banners/anhd5.jpg')}}" alt="IMG-BENNER">
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->

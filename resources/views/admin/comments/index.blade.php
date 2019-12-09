@@ -47,9 +47,13 @@
                           {{$comment->created_at}}
                         </td>
                         <td>
-                          <a href="{{route('comment.status',$comment->id)}}" class="btn btn-xs <?php echo $comment->status == 0 ?'btn-danger' : 'btn-primary' ?>" ><?php echo $comment->status == 0 ? 'hidden': 'pushlish'?>
+                         
+                          @if( $comment->status == 0)
+                          <a href="{{route('comment.status1',$comment->id)}}" class="primary">Hidden
                           </a> 
-                          <input type="hidden" name="status" value="{{$comment->status}}">
+                          @else
+                          <a href="{{route('comment.status2',$comment->id)}}" class="primary">Actice
+                          @endif
                         </td>
                        
                         <td>

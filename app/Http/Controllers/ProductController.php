@@ -117,6 +117,7 @@ class ProductController extends Controller
                     $data['image'] = $file->getClientOriginalName();
                     $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
             }
+        dd($data);
         $product = Product::findOrFail($id);
         $product->update($data);
         return redirect()->back()->with('success', 'Update product successfully!');

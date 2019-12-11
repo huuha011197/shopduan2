@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Clients;
 
 use Illuminate\Http\Request;
-use App\Slide;
 use App\Product;
 use App\ProductType;
 use App\Cart;
@@ -27,6 +26,25 @@ class CartController extends Controller
     	return redirect()->back();
     }
 
+    public function cartUpdate(Request $request, $id) {
+        $qty=$request->qty;
+        $product = Product::find($id);
+		$cart = Session::get('cart');
+		if ($qty==0 ) {
+			unset($cart[$id]);
+			Session::put('cart', $cart);
+		}elseif($qty < 0 || $qty > 10)
+		{
+			$request->session()->flash('status', 'Lỗi, vui lòng kiểm tra lại!');
+		}
+		else{
+			$cart->items[$id]['qty']=$qty;
+			Session::put('cart', $cart);
+        }
+        // dd($cart);
+        return back();
+    }
+
     public function delcart($id){
     	$oldCart = Session::has('cart') ? Session::get('cart') : null;
     	$cart = new Cart($oldCart);
@@ -48,7 +66,8 @@ class CartController extends Controller
 
     public function viewCart()
     {
-        return  view('clients.pages.order');
+        $cart = Session::get("cart");
+        return  view('clients.pages.order', compact('cart'));
     }
     public function postcheckout(Request $req){
         $cart = Session::get("cart");

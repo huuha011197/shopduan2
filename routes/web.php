@@ -10,6 +10,7 @@ use  App\Http\Middleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
 Route::group(['namespace' => 'Clients'], function(){
 	// Homepage
@@ -49,6 +50,7 @@ Route::group(['middleware' => ['auth']], function () {
 		// Cart
 		Route::get('add-to-cart/{id}','Clients\CartController@getAddtoCart')->name('themgiohang');
 		Route::get('viewcart','Clients\CartController@viewCart')->name('viewcart');
+		Route::post('cartUpdate/{id}', 'Clients\CartController@cartUpdate')->name('cartUpdate');
 		Route::get('del-cart/{id}','Clients\CartController@delcart')->name('xoagiohang');
 		Route::get('dathang','Clients\CartController@dathang')->name('dathang');
 		Route::post('dathang2','Clients\CartController@postcheckout')->name('dathang2');

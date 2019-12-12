@@ -73,7 +73,6 @@ Home
 							</a>
 						</div>
 					</div>
-
 					<!-- block1 -->
 					<div class="block1 hov-img-zoom pos-relative m-b-30">
 						<img src="{{asset('client/images/banners/anhd1.jpg')}}" alt="IMG-BENNER">

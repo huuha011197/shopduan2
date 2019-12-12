@@ -43,12 +43,14 @@ class HomeController extends Controller
         return view('clients.pages.productDetail',compact('product_detail', 'product_type', 'related_products'));
     }
 
-    public function search(Request $req){
-        $keyword = $req->search;
-        $items = Product::where([ 
-            ['name', 'LIKE', '%'. $keyword. '%'],
-        ])->paginate(6);
-        return view('clients.pages.search',compact('items', 'keyword'));
+    public function search(Request $request){
+        if($request->has('search')){
+    		$items = Product::search($request->get('search'))->paginate(6);	
+    	}else{
+    		$items = Product::paginate(6);
+    	}
+        $keyword=$request->search;
+        return view('clients.pages.search',compact('items','keyword'));
     }
     
     public function lienhe(){
@@ -68,7 +70,7 @@ class HomeController extends Controller
             $message->from('trandinhdat9b@gmail.com', 'Khách hàng');
             $message->to('trandinhdatb4@gmail.com', 'Visitor')->subject('Liên hệ với shop!');
         });
-        return back()->with('success', 'Send contact successfully!');
+        return back()->with('success', 'Đã gửi thàng công!');
     }
     public function gioithieu(){
     	return view('clients.pages.about');

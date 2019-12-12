@@ -41,7 +41,6 @@
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
-
 	<!-- Header -->
     @include('clients.common.header')
 
@@ -109,6 +108,8 @@
 	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
 	<script src="{{asset('client/js/main.js')}}"></script>
 	<script src="{{asset('client/js/cart.js')}}"></script>
-
+	<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="{{ asset('js/algolia.js') }}"></script>
 </body>
 </html>

@@ -98,8 +98,10 @@ class CartController extends Controller
             $bill_detail->unit_price = $value['price']/$value['qty'];
             $bill_detail->product_name = $value['item']['name'];
             $bill_detail->save();
+            $quantity_update=Product::find($key);
+            $quantity_update->quantity= $quantity_update->quantity-$value['qty'];
+            $quantity_update->save();
         }
-        
        Session::forget('cart');
        return redirect()->back()->with('thongbao', 'Đặt hàng thành công');
     }

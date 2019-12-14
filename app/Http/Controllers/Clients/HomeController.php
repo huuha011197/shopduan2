@@ -12,7 +12,6 @@ use App\Comment;
 use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
-
 class HomeController extends Controller
 {
     public function getIndex(){

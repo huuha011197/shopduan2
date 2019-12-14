@@ -40,7 +40,7 @@
                             </a>
                         </td>
                         <td class="column-2">{{$item['item']->name}}</td>
-                        <td class="column-3">{{number_format($item['price'])}} đ</td>
+                        <td class="column-3">{{number_format($item['unit_price'])}} đ</td>
                         <form action="{{route('cartUpdate', $key)}}" method="post">
                             @csrf
                         <td class="column-4">
@@ -48,15 +48,13 @@
                                 <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
                                     <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
                                 </button>
-
                                 <input class="size8 m-text18 t-center num-product" type="number" name="qty" value="{{$item['qty']}}">
-
                                 <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
                                     <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </td>
-                        <td class="column-5">{{ number_format($item['price'] * $item['qty'])}} đ</td>
+                        <td class="column-5">{{ number_format($item['price'])}} đ</td>
                         <td>
                             <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </td>

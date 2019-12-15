@@ -15,7 +15,7 @@
                     const markup = `
                         <div class="algolia-result">
                             <span>
-                                <img src="${window.location.origin}/shopduan2/public//client/images/${suggestion.image}" alt="img" class="algolia-thumb">
+                                <img src="${window.location.origin}/client/images/${suggestion.image}" alt="img" class="algolia-thumb">
                                 ${suggestion._highlightResult.name.value}
                             </span>
                             <span>${(suggestion.unit_price).toLocaleString('vi', {style : 'currency', currency : 'VND'})}</span>
@@ -24,11 +24,11 @@
                     return markup;
                 },
                 empty: function (result) {
-                    return 'Sorry, we did not find any results for "' + result.query + '"';
+                    return 'Xin lỗi, chúng tôi không tìm thấy bất kỳ kết quả nào cho "' + result.query + '"';
                 }
             }
         }).on('autocomplete:selected', function (event, suggestion, dataset) {
-            window.location.href = window.location.origin + '/shopduan2/public/ctsanpham/' + suggestion.id;
+            window.location.href = window.location.origin + '/ctsanpham/' + suggestion.id;
             enterPressed = true;
         })
 })();

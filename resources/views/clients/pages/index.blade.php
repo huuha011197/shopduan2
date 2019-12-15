@@ -105,17 +105,17 @@ Home
 
 						<div class="block2-content sizefull ab-t-l flex-col-c-m">
 							<h4 class="m-text4 t-center w-size3 p-b-8">
-								Sign up & get 20% off
+								ĐĂNG KÝ VÀ NHẬN 20%
 							</h4>
 
 							<p class="t-center w-size4">
-								Be the frist to know about the latest fashion news and get exclu-sive offers
+								Hãy là người đầu tiên biết về những tin tức thời trang mới nhất và nhận được những lời mời chào
 							</p>
 
 							<div class="w-size2 p-t-25">
 								<!-- Button -->
 								<a href="#" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-									Sign Up
+									ĐĂNG KÝ 
 								</a>
 							</div>
 						</div>
@@ -561,31 +561,31 @@ Home
     <div class="flex-w p-l-15 p-r-15">
         <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
             <h4 class="m-text12 t-center">
-                Free Delivery Worldwide
+                Giao hàng miễn phí trên toàn Việt Nam
             </h4>
-
-            <a href="#" class="s-text11 t-center">
-                Click here for more info
-            </a>
+            <span class="s-text11 t-center">
+                Bấm vào đây để biết thêm
+            </span>
+           
         </div>
 
         <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
             <h4 class="m-text12 t-center">
-                30 Days Return
+                30 ngày trở lại
             </h4>
 
             <span class="s-text11 t-center">
-                Simply return it within 30 days for an exchange.
+                Đơn giản chỉ cần trả lại trong vòng 30 ngày để trao đổi.
             </span>
         </div>
 
         <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
             <h4 class="m-text12 t-center">
-                Store Opening
+                Khai trương cửa hàng
             </h4>
 
             <span class="s-text11 t-center">
-                Shop open from Monday to Sunday
+                Cửa hàng mở cửa từ thứ Hai đến Chủ nhật
             </span>
         </div>
     </div>

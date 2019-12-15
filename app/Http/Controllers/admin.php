@@ -13,6 +13,7 @@ class admin extends Controller
     public function getadmin(){
     	return view('admin.home');
     }
+    
     public function order(){
         $orders = Bill::all();
         return view('admin.orderlist',compact('orders'));

@@ -13,6 +13,7 @@ use App\Bill;
 use Session;
 use Auth;
 use Hash;
+use DB;
 use App\Http\Controllers\Controller;
 class CartController extends Controller
 {
@@ -71,26 +72,27 @@ class CartController extends Controller
     }
     public function postcheckout(Request $req){
 
-        
-        $cart = Session::get("cart");
-        $customer= new Customer;
-        $customer->user_id = Auth::user()->id;
-        $customer->name = $req->name;
-        $customer->gender = $req->gender;
-        $customer->email = $req->email;
-        $customer->address = $req->address;
-        $customer->phone = $req->phone;
-        $customer->note = $req->notes;
-        $customer->save();
+        DB::beginTransaction();
+		try {
+			$cart = Session::get("cart");
+            $customer= new Customer;
+            $customer->user_id = Auth::user()->id;
+            $customer->name = $req->name;
+            $customer->gender = $req->gender;
+            $customer->email = $req->email;
+            $customer->address = $req->address;
+            $customer->phone = $req->phone;
+            $customer->note = $req->notes;
+            $customer->save();
 
-        $bill = new Bill;
-        $bill->id_customer = $customer->id;
-        $bill->date_order = date("Y-m-d");
-        $bill->total = $cart->totalPrice;
-        $bill->payment = $req->payment;
-        $bill->note = $req->notes;
-        $bill->status = 0;
-        $bill->save();
+            $bill = new Bill;
+            $bill->id_customer = $customer->id;
+            $bill->date_order = date("Y-m-d");
+            $bill->total = $cart->totalPrice;
+            $bill->payment = $req->payment;
+            $bill->note = $req->notes;
+            $bill->status = 0;
+            $bill->save();
 
         foreach ($cart->items as $key => $value) {
             $bill_detail = new BillDetail;
@@ -104,7 +106,12 @@ class CartController extends Controller
             $quantity_update->quantity= $quantity_update->quantity-$value['qty'];
             $quantity_update->save();
         }
-       Session::forget('cart');
-       return redirect()->back()->with('thongbao', 'Đặt hàng thành công');
+			DB::commit();
+            Session::forget('cart');
+            return redirect()->back()->with('thongbao', 'Đặt hàng thành công');
+		}catch (Exception $e) {
+			DB::rollBack();
+			throw new Exception($e->getMessage());
+		}
     }
 }

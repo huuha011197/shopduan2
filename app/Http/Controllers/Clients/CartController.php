@@ -41,7 +41,6 @@ class CartController extends Controller
 			$cart->items[$id]['qty']=$qty;
 			Session::put('cart', $cart);
         }
-        // dd($cart);
         return back();
     }
 

@@ -42,8 +42,8 @@ Home
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Dresses
+							<a href="{{route('ctsp', 23)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								ĐỒNG HỒ JACQUES LEMANS JL-42-6H
 							</a>
 						</div>
 					</div>
@@ -54,8 +54,8 @@ Home
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Sunglasses
+							<a href="{{route('ctsp', 1)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								ĐỒNG HỒ EPOS SWISS E-7000.701.20.98.25
 							</a>
 						</div>
 					</div>
@@ -68,8 +68,8 @@ Home
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Watches
+							<a href="{{route('ctsp', 7)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								ĐỒNG HỒ ATLANTIC AT-61352.45.21
 							</a>
 						</div>
 					</div>
@@ -79,8 +79,8 @@ Home
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Footerwear
+							<a href="{{route('ctsp', 15)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								ĐỒNG HỒ ARIES GOLD AG-G1001 G-BR
 							</a>
 						</div>
 					</div>
@@ -93,8 +93,8 @@ Home
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Bags
+							<a href="{{route('ctsp', 9)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								ĐỒNG HỒ ATLANTIC SWISS AT-60347.43.31
 							</a>
 						</div>
 					</div>
@@ -114,7 +114,7 @@ Home
 
 							<div class="w-size2 p-t-25">
 								<!-- Button -->
-								<a href="#" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
+								<a href="{{route('login')}}" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
 									ĐĂNG KÝ 
 								</a>
 							</div>
@@ -148,8 +148,7 @@ Home
 
                             <div class="block2-overlay trans-0-4">
                                 <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4" tabindex="0">
-                                    <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                    <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                   {{$item->view}}
                                 </a>
 
                                 <div class="block2-btn-addcart w-size1 trans-0-4">
@@ -294,8 +293,7 @@ Home
     
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4" tabindex="0">
-                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                       {{$item->view}}
                                     </a>
     
                                     <div class="block2-btn-addcart w-size1 trans-0-4">

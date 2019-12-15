@@ -841,6 +841,14 @@ li.sale-noti > a {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
+  width: 250px;
+}
+
+.show-header-dropdown ul li {
+  margin-bottom: 5px;
+}
+.show-header-dropdown ul li a {
+  font-weight: bold;
 }
 
 .fixed-header .header-cart {

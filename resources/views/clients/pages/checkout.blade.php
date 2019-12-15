@@ -5,8 +5,8 @@
 @section('content')
 <!-- Title Page -->
 @if(Session::has('thongbao'))
-    <script> alert('<div> <p> Đặt hàng thành công!</p></div>') </script>
-    <script> window.location.href = window.location.origin + '/shopduan2/public/'</script>
+    <script> alert('Đặt hàng thành công!') </script>
+    <script> window.location.href = window.location.origin + '/'</script>
 
 @endif
 @if(Session::has('cart'))

@@ -14,7 +14,6 @@ use Session;
 use Auth;
 use Hash;
 use App\Http\Controllers\Controller;
-
 class CartController extends Controller
 {
     public function getAddtoCart(Request $req,$id){
@@ -38,10 +37,12 @@ class CartController extends Controller
 			$request->session()->flash('status', 'Lỗi, vui lòng kiểm tra lại!');
 		}
 		else{
-			$cart->items[$id]['qty']=$qty;
+            $cart->items[$id]['qty']=$qty;
+            $cart->totalPrice= $qty * $cart->items[$id]['unit_price'];
+            
 			Session::put('cart', $cart);
         }
-        // dd($cart);
+    //    Session::forget('cart');
         return back();
     }
 
@@ -95,7 +96,7 @@ class CartController extends Controller
             $bill_detail->id_bill = $bill->id;
             $bill_detail->id_product=$key;
             $bill_detail->quantity = $value['qty'];
-            $bill_detail->unit_price = $value['price']/$value['qty'];
+            $bill_detail->unit_price = $value['unit_price'];
             $bill_detail->product_name = $value['item']['name'];
             $bill_detail->save();
             $quantity_update=Product::find($key);

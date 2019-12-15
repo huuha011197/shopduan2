@@ -2,12 +2,16 @@
     <div class="flex-w p-b-90">
         <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
             <h4 class="s-text12 p-b-30">
-                GET IN TOUCH
+                LIÊN HỆ
             </h4>
 
             <div>
                 <p class="s-text7 w-size27">
-                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+                    Địa chỉ: 151 Âu Cơ - Liên Chiểu - Đà nẵng
+                    <br>
+                    Email: shopdongho@gmail.com
+                    <br>
+                    SDT: 0354389539
                 </p>
 
                 <div class="flex-m p-t-30">
@@ -22,31 +26,64 @@
 
         <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
             <h4 class="s-text12 p-b-30">
-                Categories
+                HỖ TRỢ
             </h4>
 
             <ul>
                 <li class="p-b-9">
                     <a href="#" class="s-text7">
-                        Men
+                        Bảo hành
                     </a>
                 </li>
 
                 <li class="p-b-9">
                     <a href="#" class="s-text7">
-                        Women
+                        Đổi hàng
                     </a>
                 </li>
 
                 <li class="p-b-9">
                     <a href="#" class="s-text7">
-                        Dresses
+                        Vận chuyển
+                    </a>
+                </li>
+                <li class="p-b-9">
+                    <a href="#" class="s-text7">
+                        Thanh toán
+                    </a>
+                </li>
+
+               
+            </ul>
+        </div>
+
+        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+            <h4 class="s-text12 p-b-30">
+                TƯ VẤN
+            </h4>
+
+            <ul>
+                <li class="p-b-9">
+                    <a href="#" class="s-text7">
+                        Góc hỏi đáp
                     </a>
                 </li>
 
                 <li class="p-b-9">
                     <a href="#" class="s-text7">
-                        Sunglasses
+                        Thương hiệu
+                    </a>
+                </li>
+
+                <li class="p-b-9">
+                    <a href="#" class="s-text7">
+                        Tin tức
+                    </a>
+                </li>
+
+                <li class="p-b-9">
+                    <a href="#" class="s-text7">
+                      Sự kiện
                     </a>
                 </li>
             </ul>
@@ -54,63 +91,31 @@
 
         <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
             <h4 class="s-text12 p-b-30">
-                Links
+                Thông tin
             </h4>
 
             <ul>
                 <li class="p-b-9">
                     <a href="#" class="s-text7">
-                        Search
+                        Giới thiệu
                     </a>
                 </li>
 
                 <li class="p-b-9">
                     <a href="#" class="s-text7">
-                        About Us
+                        Tuyển dụng
                     </a>
                 </li>
 
                 <li class="p-b-9">
                     <a href="#" class="s-text7">
-                        Contact Us
+                        Cửa hàng
                     </a>
                 </li>
 
                 <li class="p-b-9">
                     <a href="#" class="s-text7">
-                        Returns
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-            <h4 class="s-text12 p-b-30">
-                Help
-            </h4>
-
-            <ul>
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Track Order
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Returns
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Shipping
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        FAQs
+                        Khách hàng
                     </a>
                 </li>
             </ul>
@@ -118,7 +123,7 @@
 
         <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
             <h4 class="s-text12 p-b-30">
-                Newsletter
+                Bản tin
             </h4>
 
             <form>
@@ -130,7 +135,7 @@
                 <div class="w-size2 p-t-20">
                     <!-- Button -->
                     <button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-                        Subscribe
+                        Theo dõi
                     </button>
                 </div>
 
@@ -159,8 +164,6 @@
             <img class="h-size2" src="{{asset('client/images/icons/discover.png')}}" alt="IMG-DISCOVER">
         </a>
 
-        <div class="t-center s-text8 p-t-20">
-            Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-        </div>
+        
     </div>
 </footer>

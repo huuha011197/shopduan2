@@ -37,12 +37,11 @@ class CartController extends Controller
 			$request->session()->flash('status', 'Lỗi, vui lòng kiểm tra lại!');
 		}
 		else{
-            $cart->items[$id]['qty']=$qty;
-            $cart->totalPrice= $qty * $cart->items[$id]['unit_price'];
+      $cart->items[$id]['qty']=$qty;
+      $cart->totalPrice= $qty * $cart->items[$id]['unit_price'];
             
 			Session::put('cart', $cart);
         }
-    //    Session::forget('cart');
         return back();
     }
 
@@ -71,6 +70,8 @@ class CartController extends Controller
         return  view('clients.pages.order', compact('cart'));
     }
     public function postcheckout(Request $req){
+
+        
         $cart = Session::get("cart");
         $customer= new Customer;
         $customer->user_id = Auth::user()->id;

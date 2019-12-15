@@ -4,13 +4,10 @@
 @endsection
 @section('content')
 <!-- Title Page -->
-<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(images/heading-pages-02.jpg);">
-    <h2 class="l-text2 t-center">
-        Women
-    </h2>
-    <p class="m-text13 t-center">
-        New Arrivals Women Collection 2018
-    </p>
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(http://127.0.0.1:8000/client/images/cart.jpg);">
+	<h2 class="l-text2 t-center">
+		Loại sản phẩm
+	</h2>
 </section>
 
 

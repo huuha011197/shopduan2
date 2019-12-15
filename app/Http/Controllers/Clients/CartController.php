@@ -70,6 +70,8 @@ class CartController extends Controller
         return  view('clients.pages.order', compact('cart'));
     }
     public function postcheckout(Request $req){
+
+        
         $cart = Session::get("cart");
         $customer= new Customer;
         $customer->user_id = Auth::user()->id;

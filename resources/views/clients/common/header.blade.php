@@ -11,18 +11,18 @@
 				</div>
 
 				<span class="topbar-child1">
-					Free shipping for standard order over $100
+					Giao hàng miễn phí cho đơn hàng tiêu chuẩn trên $ 100
 				</span>
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						fashe@example.com
+						khanh@gmail.com
 					</span>
 
 					<div class="topbar-language rs1-select2">
 						<select class="selection-1" name="time">
-							<option>USD</option>
-							<option>EUR</option>
+							<option>VIỆT NAM</option>
+									<option>ENGLISH</option>
 						</select>
 					</div>
 				</div>
@@ -216,20 +216,20 @@
 				<ul class="main-menu">
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<span class="topbar-child1">
-							Free shipping for standard order over $100
+							Giao hàng miễn phí cho đơn hàng tiêu chuẩn trên $ 100
 						</span>
 					</li>
 
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<div class="topbar-child2-mobile">
 							<span class="topbar-email">
-								fashe@example.com
+								khanh@gmail.com
 							</span>
 
 							<div class="topbar-language rs1-select2">
 								<select class="selection-1" name="time">
-									<option>USD</option>
-									<option>EUR</option>
+									<option>VIỆT NAM</option>
+									<option>ENGLISH</option>
 								</select>
 							</div>
 						</div>

@@ -6,8 +6,7 @@
 <!-- Title Page -->
 @if(Session::has('thongbao'))
     <script> alert('<div> <p> Đặt hàng thành công!</p></div>') </script>
-
-    <script> window.location.href = window.location.origin + '/shopduan2/public/' </script>
+    <script> window.location.href = window.location.origin + '/shopduan2/public/'</script>
 
 @endif
 @if(Session::has('cart'))

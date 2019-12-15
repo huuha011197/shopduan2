@@ -24,11 +24,7 @@
                     return markup;
                 },
                 empty: function (result) {
-
                     return 'Xin lỗi, chúng tôi không tìm thấy bất kỳ kết quả nào cho "' + result.query + '"';
-
-               
-
                 }
             }
         }).on('autocomplete:selected', function (event, suggestion, dataset) {

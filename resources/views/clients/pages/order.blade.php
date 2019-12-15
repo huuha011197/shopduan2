@@ -40,7 +40,7 @@
                             </a>
                         </td>
                         <td class="column-2">{{$item['item']->name}}</td>
-                        <td class="column-3">{{number_format($item['price'])}} đ</td>
+                        <td class="column-3">{{number_format($item['unit_price'])}} đ</td>
                         <form action="{{route('cartUpdate', $key)}}" method="post">
                             @csrf
                         <td class="column-4">

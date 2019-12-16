@@ -24,7 +24,9 @@
 *::after {
   box-sizing: border-box;
 }
-
+.itle-charts{
+  color: #00626e;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;

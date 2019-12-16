@@ -24,7 +24,12 @@
   padding-top: 25px;
   border-bottom: none;
 }
-
+.title-charts{
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  color: #00626e;
+}
 .offline-doc .navbar.navbar-transparent .navbar-minimize {
   display: none;
 }

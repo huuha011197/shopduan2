@@ -93,6 +93,7 @@
       </nav>
         @yield('content')
       	@include('admin.common.footer')
+        @yield('javascript')
     </div>
   </div>
 </body>

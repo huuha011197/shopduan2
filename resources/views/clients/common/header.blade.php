@@ -105,15 +105,15 @@
 					<!-- Header cart noti -->
 					@if(Auth::check())
 					<div class="header-cart header-dropdown1">
-						<u>
-							<li><a href="{{route('cntk')}}">Cập nhật tài khoản</a></li>
-							<li><a href="{{route('doi_mk')}}">Đổi mật khẩu</a></li>
-							<li><a href="#">Lịch sử đặt hàng</a></li>
-							<li><a href="{{route('logout')}}">Đăng xuất</a></li>
-						</u>
+						<ul>
+							<li><a class="btn btn-primary" href="{{route('cntk')}}">Cập nhật tài khoản</a></li>
+							<li><a class="btn btn-primary" href="{{route('doi_mk')}}">Đổi mật khẩu</a></li>
+							<li><a class="btn btn-primary" href="#">Lịch sử đặt hàng</a></li>
+							<li><a class="btn btn-primary" href="{{route('logout')}}">Đăng xuất</a></li>
+						</ul>
 					</div>
 					@else
-					<li><a href="{{route('login')}}">Đăng nhập</a></li>
+					<li style="position: relative;left: -95px;"><a href="{{route('login')}}">Đăng nhập</a></li>
 					@endif
 
 				</div>

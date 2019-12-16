@@ -42,6 +42,7 @@
 			<div class="header-icons">
 				<div class="dropdown show">
 					<span class="btn span1" href="#" role="button" id="dropdownMenuLink"
+
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					</span>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -111,7 +112,6 @@
 						</div>
 						@endif
 					</div>
-
 					<!-- Header cart noti -->
 
 				</div>

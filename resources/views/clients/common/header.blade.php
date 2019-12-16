@@ -69,8 +69,9 @@
 					<!-- Header cart noti -->
 
 					<div class="header-cart header-dropdown">
-						@foreach($product_cart as $product)
+						
 						<ul class="header-cart-wrapitem">
+							@foreach($product_cart as $product)
 							<li class="header-cart-item">
 								<div class="header-cart-item-img">
 									<img src="{{asset('client/images/'.$product['item']['image'] )}}" alt="IMG">
@@ -86,8 +87,9 @@
 										</span>
 								</div>
 							</li>
+							@endforeach
 						</ul>
-						@endforeach
+					
 
 						<div class="header-cart-total">
 							Total: {{number_format(Session('cart')->totalPrice)}}

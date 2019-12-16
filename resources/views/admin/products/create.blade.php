@@ -23,6 +23,7 @@
             </p>
           </div>
           <div class="card-body">
+            @include('errors.errors')
             <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data">
               @csrf
               <div class="col-md-3">

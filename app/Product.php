@@ -9,7 +9,15 @@ class Product extends Model
     use Searchable;
     protected $table ="products";
         protected $fillable = [
-    	'id', 'name','id_type','description','unit_price','promotion_price','image','unit','new','quantity'
+        'id', 
+        'name',
+        'id_type',
+        'description',
+        'unit_price',
+        'promotion_price',
+        'image',
+        'new',
+        'quantity'
     ];
 
     public function danh_muc(){
@@ -20,8 +28,7 @@ class Product extends Model
     {
         return $this->belongsTo('App\ProductType', 'id');
     }
-
-
+    
     public function comment()
     {
         return $this->hasMany(Comment::class);

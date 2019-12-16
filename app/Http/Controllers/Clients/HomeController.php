@@ -44,7 +44,7 @@ class HomeController extends Controller
 
     public function search(Request $request){
         if($request->has('search')){
-    		$items = Product::search($request->get('search'))->paginate(6);	
+            $items = Product::search($request->search)->paginate(6);	
     	}else{
     		$items = Product::paginate(6);
     	}

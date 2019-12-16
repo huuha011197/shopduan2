@@ -1,6 +1,6 @@
 @extends('clients.layouts.master')
 @section('title')
-Liên hệ
+Đăng nhập
 @endsection
 @section('content')
 <script src="source/assets/dest/js/jqueri.js"></script>

@@ -169,7 +169,7 @@ Home
                                 {{ $item->name}}
                             </a>
 
-                            @if ($item->promotion_price == 0)
+                            @if ($item->promotion_price == $item->unit_price)
                             <span class="block2-price m-text6 p-r-5">
                                 {{ number_format($item->unit_price)}} đ
                             </span>

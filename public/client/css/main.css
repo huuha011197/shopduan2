@@ -637,7 +637,7 @@ iframe {
 }
 
 .logo img {
-  max-height: 27px;
+  max-height: 50px;
 }
 
 
@@ -1133,7 +1133,7 @@ border: 0;
 
 .side-menu .sub-menu > li {
   padding-left: 12px;
-  padding-top: 
+  padding-top: 0px;
 }
 
 .side-menu .sub-menu a:hover {

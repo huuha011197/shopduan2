@@ -6,7 +6,7 @@
 		<div class="wrap_header">
 			<!-- Logo -->
 			<a href="{{Route('trang-chu')}}" class="logo">
-				<img src="{{asset('client/images/icons/logo.png')}}" alt="IMG-LOGO">
+				<img src="{{asset('client/images/logo11.jpg')}}" alt="IMG-LOGO">
 			</a>
 
 			<!-- Menu -->
@@ -42,6 +42,7 @@
 			<div class="header-icons">
 				<div class="dropdown show">
 					<span class="btn span1" href="#" role="button" id="dropdownMenuLink"
+
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					</span>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -111,8 +112,6 @@
 						</div>
 						@endif
 					</div>
-
-					<!-- Header cart noti -->
 
 				</div>
 			</div>

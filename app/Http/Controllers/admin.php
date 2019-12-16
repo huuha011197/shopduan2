@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 use App\User;
 use Illuminate\Http\Request;
 use App\ProductType;
@@ -11,7 +12,71 @@ use App\BillDetail;
 class admin extends Controller
 {
     public function getadmin(){
-    	return view('admin.home');
+        $chart_options = [
+            'chart_title' => 'Users by months',
+            'report_type' => 'group_by_date',
+            'model' => 'App\User',
+            'group_by_field' => 'created_at',
+            'group_by_period' => 'month',
+            'chart_type' => 'bar',
+            'filter_field' => 'created_at',
+            'filter_days' => 365, // show only last 30 days
+        ];
+        $chart1 = new LaravelChart($chart_options);
+        $chart_options = [
+            'chart_title' => 'Users by names this months',
+            'report_type' => 'group_by_string',
+            'model' => 'App\User',
+            'group_by_field' => 'name',
+            'chart_type' => 'pie',
+            'filter_field' => 'created_at',
+            'filter_period' => 'month', // show users only registered this month
+        ];
+        $chart2 = new LaravelChart($chart_options);
+        $chart_options = [
+            'chart_title' => 'Product by months',
+            'report_type' => 'group_by_date',
+            'model' => 'App\Product',
+            'group_by_field' => 'created_at',
+            'group_by_period' => 'month',
+            'chart_type' => 'bar',
+            'filter_field' => 'created_at',
+            'filter_days' => 365, // show only last 30 days
+        ];
+        $chart3 = new LaravelChart($chart_options);
+        $chart_options = [
+            'chart_title' => 'Comment by months',
+            'report_type' => 'group_by_date',
+            'model' => 'App\Comment',
+            'group_by_field' => 'created_at',
+            'group_by_period' => 'month',
+            'chart_type' => 'pie',
+            'filter_field' => 'created_at',
+            'filter_days' => 365, // show only last 30 days
+        ];
+        $chart4 = new LaravelChart($chart_options);
+        $chart_options = [
+            'chart_title' => 'Order by months',
+            'report_type' => 'group_by_date',
+            'model' => 'App\Bill',
+            'group_by_field' => 'created_at',
+            'group_by_period' => 'month',
+            'chart_type' => 'line',
+            'filter_field' => 'created_at',
+            'filter_days' => 365, // show only last 30 days
+        ];
+        $chart5 = new LaravelChart($chart_options);
+        $chart_options = [
+            'chart_title' => 'Order by customer this months',
+            'report_type' => 'group_by_string',
+            'model' => 'App\Customer',
+            'group_by_field' => 'name',
+            'chart_type' => 'pie',
+            'filter_field' => 'created_at',
+            'filter_period' => 'month', // show users only registered this month
+        ];
+        $chart6 = new LaravelChart($chart_options);
+        return view('admin.charts.charts', compact('chart1', 'chart2','chart3','chart4','chart5','chart6'));
     }
     
     public function order(){

@@ -1097,10 +1097,11 @@ height:47px
     4. NAVIGATION
 ============================================================================= */
 .menu-beta {
-height:47px
+
 }
 
 .menu-beta li {
+float: left;
 border-right:1px solid #d3d3d3
 }
 

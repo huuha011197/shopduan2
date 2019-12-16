@@ -1,32 +1,7 @@
 <header class="header1">
 	<!-- Header desktop -->
 	<div class="container-menu-header">
-		<div class="topbar">
-			<div class="topbar-social">
-				<a href="#" class="topbar-social-item fa fa-facebook"></a>
-				<a href="#" class="topbar-social-item fa fa-instagram"></a>
-				<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-				<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-				<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-			</div>
-
-			<span class="topbar-child1">
-				Free shipping for standard order over $100
-			</span>
-
-			<div class="topbar-child2">
-				<span class="topbar-email">
-					fashe@example.com
-				</span>
-
-				<div class="topbar-language rs1-select2">
-					<select class="selection-1" name="time">
-						<option>USD</option>
-						<option>EUR</option>
-					</select>
-				</div>
-			</div>
-		</div>
+	
 
 		<div class="wrap_header">
 			<!-- Logo -->
@@ -54,21 +29,31 @@
 			<div class="aa-input-container" id="aa-input-container">
 				<form method="post" action="{{route('search')}}">
 					@csrf
-				<input type='search' id="aa-search-input" class="aa-input-search" placeholder="Search with algolia..."
-					name="search" autocomplete="off" />
-				<svg class="aa-input-icon" viewBox="654 -372 1664 1664">
-					<path
-						d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
-				</svg>
+					<input type='search' id="aa-search-input" class="aa-input-search"
+						placeholder="Search with algolia..." name="search" autocomplete="off" />
+					<svg class="aa-input-icon" viewBox="654 -372 1664 1664">
+						<path
+							d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+					</svg>
 				</form>
-				
+
 			</div>
 			<!-- Header Icon -->
 			<div class="header-icons">
-				<img src="{{asset('client/images/icons/icon-header-01.png')}}"
-					class="header-icon1 js-show-header-dropdown1" alt="ICON">
-				<span class="linedivide1"></span>
-
+				<div class="dropdown show">
+					<span class="btn span1" href="#" role="button" id="dropdownMenuLink"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					</span>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						@if(Auth::check())
+						<a class="dropdown-item" href="{{route('cntk')}}">Cập nhật tài khoản</a>
+						<a class="dropdown-item"  href="{{route('doi_mk')}}">Đổi mật khẩu</a>
+						<a class="dropdown-item" href="{{route('logout')}}">Đăng xuất</a>
+						@else
+						<li><a class="dropdown-item" href="{{route('login')}}">Đăng nhập</a></li>
+						@endif
+					</div>
+				</div>
 				<div class="header-wrapicon2">
 					<img src="{{asset('client/images/icons/icon-header-02.png')}}"
 						class="header-icon1 js-show-header-dropdown" alt="ICON">
@@ -128,18 +113,6 @@
 					</div>
 
 					<!-- Header cart noti -->
-					@if(Auth::check())
-					<div class="header-cart header-dropdown1">
-						<u>
-							<li><a href="{{route('cntk')}}">Cập nhật tài khoản</a></li>
-							<li><a href="{{route('doi_mk')}}">Đổi mật khẩu</a></li>
-							<li><a href="#">Lịch sử đặt hàng</a></li>
-							<li><a href="{{route('logout')}}">Đăng xuất</a></li>
-						</u>
-					</div>
-					@else
-					<li><a href="{{route('login')}}">Đăng nhập</a></li>
-					@endif
 
 				</div>
 			</div>
@@ -226,40 +199,12 @@
 	</div>
 	</div>
 
-	<!-- Menu Mobile -->
-	<div class="wrap-side-menu">
-		<nav class="side-menu">
-			<ul class="main-menu">
-				<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-					<span class="topbar-child1">
-						Free shipping for standard order over $100
-					</span>
-				</li>
 
-				<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-					<div class="topbar-child2-mobile">
-						<span class="topbar-email">
-							fashe@example.com
-						</span>
 
-						<div class="topbar-language rs1-select2">
-							<select class="selection-1" name="time">
-								<option>USD</option>
-								<option>EUR</option>
-							</select>
-						</div>
-					</div>
-				</li>
-
-				<li class="item-topbar-mobile p-l-10">
-					<div class="topbar-social-mobile">
-						<a href="#" class="topbar-social-item fa fa-facebook"></a>
-						<a href="#" class="topbar-social-item fa fa-instagram"></a>
-						<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-						<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-						<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-					</div>
-				</li>
+		<!-- Menu Mobile -->
+		<div class="wrap-side-menu" >
+			<nav class="side-menu">
+			
 
 				<li class="item-menu-mobile">
 					<a href="index.html">Home</a>

@@ -41,15 +41,15 @@ Thay đổi mật khẩu
 						<div class="space20">&nbsp;</div>
                         <div class="form-block">
 							<label for="phone">Mật khẩu cũ*</label>
-							<input type="password" id="phone"  name="old_password" >
+							<input type="password" id="phone"  name="old_password" class="form-control">
 						</div>
 						<div class="form-block">
 							<label for="phone">Mật khẩu*</label>
-							<input type="password" id="phone"  name="password" >
+							<input type="password" id="phone"  name="password" class="form-control">
 						</div>
 						<div class="form-block">
 							<label for="phone">Nhập lại mật khẩu*</label>
-							<input type="password" id="phone" name="re_password" >
+							<input type="password" id="phone" name="re_password" class="form-control">
 						</div>
 						<div class="form-block">
 							<button type="submit" class="btn btn-primary">Đổi mật khẩu</button>

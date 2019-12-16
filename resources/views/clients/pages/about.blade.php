@@ -27,16 +27,16 @@ Giới thiệu
 				</h3>
 
 				<p class="p-b-28">
-					Được thành lập tại Seoul – Hàn Quốc năm 2001. Với những gì đã đạt được, Julius đã trở thành một thương hiệu lớn mang tầm quốc tế năm 2015. 
+					Được thành lập tại Đà nẵng – Hàn Quốc năm 2001. Với những gì đã đạt được, Fashe đã trở thành một thương hiệu lớn mang tầm quốc tế năm 2015. 
 				</p>
 
 				<div class="bo13 p-l-29 m-l-9 p-b-10">
 					<p class="p-b-11">
 						Trải qua quá trình 17 năm phát triển, Julius được phái đẹp chào đón nhiệt liệt chào đón khi xuất hiện  từ những ngày đầu tiên như Hàn Quốc sau đó lan tỏa và đăng ký hiệp hội Marid quốc tế trên 30 nước trên thế giới như America, Canada, Mexico, Iran, Vietnam, India, Philippines, Thai Lan, Trung Quốc. etc. 
-						Năm 2012, Julius được vinh danh với giải thưởng có thiết kế đẹp nhất năm 2012 tại hội chợ đồng hồ Hong Kong. 
+						Năm 2012, Fashe được vinh danh với giải thưởng có thiết kế đẹp nhất năm 2012 tại hội chợ đồng hồ Hong Kong. 
 					</p>
-					<p>Julius được sản xuất khép kín từ khâu thiết kế tại Hàn Quốc, nhập khẩu máy của Nhật đến lắp ráp tại Trung Quốc. Tạo nên một mức giá phân khúc phổ thông phù hợp và cạnh tranh nhất. Xây dựng nên một “đế chế” vững mạnh trong lòng giới trẻ yêu thời trang. </p>
-					<p>Julius thương hiệu Hàn quốc, công nghệ Nhật Bản với máy toàn bộ khung máy đồng hồ được nhật nhập khẩu 100% từ Citizen. Thiết kế tại Korea bởi chuyên gia thời trang hàng đầu Hàn Quốc, tiêu chuẩn quốc tế, lắp ráp tại Trung Quốc, bảo hành quốc tế và chế độ hậu mãi tốt nhất.</p>
+					<p>Fashe được sản xuất khép kín từ khâu thiết kế tại Hàn Quốc, nhập khẩu máy của Nhật đến lắp ráp tại Trung Quốc. Tạo nên một mức giá phân khúc phổ thông phù hợp và cạnh tranh nhất. Xây dựng nên một “đế chế” vững mạnh trong lòng giới trẻ yêu thời trang. </p>
+					<p>Fashe thương hiệu Hàn quốc, công nghệ Nhật Bản với máy toàn bộ khung máy đồng hồ được nhật nhập khẩu 100% từ Citizen. Thiết kế tại Korea bởi chuyên gia thời trang hàng đầu Hàn Quốc, tiêu chuẩn quốc tế, lắp ráp tại Trung Quốc, bảo hành quốc tế và chế độ hậu mãi tốt nhất.</p>
 					<span class="s-text7">
 						
 					</span>

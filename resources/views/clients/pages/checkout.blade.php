@@ -5,8 +5,9 @@
 @section('content')
 <!-- Title Page -->
 @if(Session::has('thongbao'))
-    <script> alert('<div> <p> Đặt hàng thành công!</p></div>') </script>
-    <script> window.location.href = window.location.origin</script>
+    <script> alert('Đặt hàng thành công!') </script>
+    <script> window.location.href = window.location.origin + '/'</script>
+
 @endif
 @if(Session::has('cart'))
 <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m"

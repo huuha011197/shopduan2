@@ -36,9 +36,9 @@ class HomeController extends Controller
     public function ctsp($id){
         $product_detail = Product::with('product_type')->findOrFail($id);
         $product_type = $product_detail->product_type;
-        // dd($product_type);
+        $product_detail->view += 1;
+        $product_detail->save();
         $related_products = Product::where('id_type', $product_detail->id_type)->get();
-        // dd($related_products);
         return view('clients.pages.productDetail',compact('product_detail', 'product_type', 'related_products'));
     }
 

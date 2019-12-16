@@ -85,7 +85,7 @@ Sản phẩm chi tiết
 				</h4>
 
 				<span class="m-text17">
-						{{ $product_detail->unit_price }} đ
+					{{ number_format($product_detail->unit_price)}} đ
 				</span>
 
 				<p class="s-text8 p-t-10">

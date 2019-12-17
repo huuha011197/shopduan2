@@ -17,7 +17,8 @@ class Product extends Model
         'promotion_price',
         'image',
         'new',
-        'quantity'
+        'quantity',
+        'view'
     ];
 
     public function danh_muc(){

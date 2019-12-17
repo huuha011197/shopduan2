@@ -641,7 +641,7 @@ iframe {
 }
 
 .logo img {
-  max-height: 27px;
+  max-height: 50px;
 }
 
 
@@ -813,7 +813,7 @@ li.sale-noti > a {
 .header-cart {
   position: absolute;
   z-index: 1100;
-  width: 200px;
+  width: 400px !important;
   top: 190%;
   right: -10px;
   padding: 20px;
@@ -845,6 +845,9 @@ li.sale-noti > a {
   width: 30px;
   background-image: url('../images/icons/icon-header-01.png');
   background-size: cover;
+}
+.header-cart ul {
+  overflow-x: hidden;
 }
 .header-cart ul li{
 padding: .25rem .5rem;
@@ -1137,7 +1140,7 @@ border: 0;
 
 .side-menu .sub-menu > li {
   padding-left: 12px;
-  padding-top: 
+  padding-top: 0px;
 }
 
 .side-menu .sub-menu a:hover {

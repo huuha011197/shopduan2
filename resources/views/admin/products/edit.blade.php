@@ -11,15 +11,7 @@
           <div class="card-header card-header-primary">
             <h4 class="card-title">Repair Product {{$product->name}}</h4>
             <p class="card-category">
-              @if ($errors->any())
-              <div class="alert alert-danger">
-                <ul>
-                  @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                  @endforeach
-                </ul>
-              </div>
-              @endif
+            @include('errors.errors')
             </p>
           </div>
           <div class="card-body">

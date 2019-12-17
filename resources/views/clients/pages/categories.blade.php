@@ -83,7 +83,7 @@
 								<!-- Block2 -->
 								<div class="block2">
                                         <div
-                                            class="block2-img wrap-pic-w of-hidden pos-relative @if ($item->promotion_price != 0) block2-labelsale @else block2-labelnew @endif">
+                                            class="block2-img wrap-pic-w of-hidden pos-relative @if ($item->promotion_price !==$item->unit_price ) block2-labelsale @else block2-labelnew @endif">
                                             <img src="{{asset('client/images/'. $item->image)}}" alt="IMG-PRODUCT">
                 
                                             <div class="block2-overlay trans-0-4">
@@ -110,7 +110,7 @@
                                                 {{ $item->name}}
                                             </a>
                 
-                                            @if ($item->promotion_price == 0)
+                                            @if ($item->promotion_price == $item->unit_price)
                                             <span class="block2-price m-text6 p-r-5">
                                                 {{ number_format($item->unit_price)}} đ
                                             </span>
@@ -132,8 +132,7 @@
 
 					<!-- Pagination -->
 					<div class="pagination flex-m flex-w p-t-26">
-						<a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
-						<a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
+					<div class="row">{{$cate_products->links()}}</div>
 					</div>
 				</div>
 			</div>

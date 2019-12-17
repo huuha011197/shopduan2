@@ -87,5 +87,5 @@ return [
         'id' => env('ALGOLIA_APP_ID', '0CESHZVR8B'),
         'secret' => env('ALGOLIA_SECRET', '109872ce9b4e9327a5a4443d191e7677'),
     ],
-    'queue' => true,
+    
 ];

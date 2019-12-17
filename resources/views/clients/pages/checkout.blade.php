@@ -72,7 +72,7 @@
                                     <!--  one item	 -->
                                     <div class="media">
                                         <div class="media-body">
-                                            {{-- <p class="font-large">ĐỒNG HỒ EPOS SWISS E-7000.701.22.16.26</p>
+                                            {{-- <p class="font-large">{{$cart->items->name}}</p>
                                             <span class="color-gray your-order-info"> Đơn giá: {{$cart->items->price}}</span>
                                             <span class="color-gray your-order-info"> Số lượng:
                                                 {{$cart->items->qty}}</span>

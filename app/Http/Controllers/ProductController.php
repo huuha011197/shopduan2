@@ -57,7 +57,7 @@ class ProductController extends Controller
         $file = $request->file('image');
         $data['image']=$file->getClientOriginalName();
         Product::create($data);
-        $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
+        $file->move(base_path('public/client/images/'), $file->getClientOriginalName());
         return redirect()->back()->with('success', 'Create product successfully!');
     }
 
@@ -115,7 +115,7 @@ class ProductController extends Controller
                 $data['image'] = $request->image2;
             }else{
                     $data['image'] = $file->getClientOriginalName();
-                    $file->move(base_path('public/source/image/product/'), $file->getClientOriginalName());
+                    $file->move(base_path('public/client/images/'), $file->getClientOriginalName());
             }
         dd($data);
         $product = Product::findOrFail($id);

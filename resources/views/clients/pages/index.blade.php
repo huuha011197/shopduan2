@@ -136,14 +136,14 @@ Home
 
         <!-- Slide2 -->
         <div class="wrap-slick2">
-            <div class="slick2">
+            <div id='stick1' class="slick2">
                 @foreach ($new_products as $item)
                 <div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active" data-slick-index="3" aria-hidden="false"
                     tabindex="0" style="width: 300px;">
                     <!-- Block2 -->
                     <div class="block2">
                         <div
-                            class="block2-img wrap-pic-w of-hidden pos-relative @if ($item->promotion_price != 0) block2-labelsale @else block2-labelnew @endif">
+                            class="block2-img wrap-pic-w of-hidden pos-relative @if ($item->promotion_price !==$item->unit_price ) block2-labelsale @else block2-labelnew @endif">
                             <img src="{{asset('client/images/'. $item->image)}}" alt="IMG-PRODUCT">
 
                             <div class="block2-overlay trans-0-4">
@@ -169,7 +169,7 @@ Home
                                 {{ $item->name}}
                             </a>
 
-                            @if ($item->promotion_price == 0)
+                            @if ($item->promotion_price == $item->unit_price)
                             <span class="block2-price m-text6 p-r-5">
                                 {{ number_format($item->unit_price)}} đ
                             </span>
@@ -286,7 +286,7 @@ Home
                         <!-- Block2 -->
                         <div class="block2">
                             <div
-                                class="block2-img wrap-pic-w of-hidden pos-relative @if ($item->promotion_price != 0) block2-labelsale @else block2-labelnew @endif">
+                                class="block2-img wrap-pic-w of-hidden pos-relative @if ($item->promotion_price !==$item->unit_price ) block2-labelsale @else block2-labelnew @endif">
                                 <img src="{{asset('client/images/'. $item->image)}}" alt="IMG-PRODUCT">
     
                                 <div class="block2-overlay trans-0-4">
@@ -312,7 +312,7 @@ Home
                                     {{ $item->name}}
                                 </a>
     
-                                @if ($item->promotion_price == 0)
+                                @if ($item->promotion_price == $item->unit_price)
                                 <span class="block2-price m-text6 p-r-5">
                                     {{ number_format($item->unit_price)}} đ
                                 </span>

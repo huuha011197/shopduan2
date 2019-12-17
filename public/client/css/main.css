@@ -213,7 +213,11 @@ iframe {
     border-radius: 100%;
     background-color: #e65540;
 }
-
+.header-cart ul {
+  overflow-x: hidden;
+}
+.header-cart {
+  width: 400px !important;}
 @-webkit-keyframes ball-scale {
     0% {
         -webkit-transform: scale(.1);

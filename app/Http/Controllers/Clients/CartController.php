@@ -29,19 +29,24 @@ class CartController extends Controller
     public function cartUpdate(Request $request, $id) {
         $qty=$request->qty;
         $product = Product::find($id);
-		$cart = Session::get('cart');
-		if ($qty==0 ) {
-			unset($cart[$id]);
-			Session::put('cart', $cart);
-		}elseif($qty < 0 || $qty > 10)
-		{
-			$request->session()->flash('status', 'Lỗi, vui lòng kiểm tra lại!');
-		}
-		else{
-            $cart->items[$id]['qty']=$qty;
-            $cart->totalPrice= $qty * $cart->items[$id]['unit_price'];
-			Session::put('cart', $cart);
-        }
+        $cart = Session::get('cart');
+            if ($qty==0 && count($cart->items)==1) {
+                Session::forget('cart');
+            }elseif ($qty==0) {
+                $cart->removeItem($id);
+                Session::put('cart', $cart);
+            }
+            elseif ( $qty<$cart->items[$id]['qty']) {
+                $cart->items[$id]['price']= $qty * $cart->items[$id]['unit_price'];
+                $cart->totalPrice-=abs($cart->items[$id]['qty']-$qty)*$cart->items[$id]['unit_price'];
+                $cart->items[$id]['qty']=$qty;
+                Session::put('cart', $cart);
+            }else{
+                $cart->items[$id]['price']= $qty * $cart->items[$id]['unit_price'];
+                $cart->totalPrice+=abs($cart->items[$id]['qty']-$qty)*$cart->items[$id]['unit_price'];
+                $cart->items[$id]['qty']=$qty;
+                Session::put('cart', $cart);
+            }
         return back();
     }
 

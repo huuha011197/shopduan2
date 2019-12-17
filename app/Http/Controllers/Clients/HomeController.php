@@ -10,22 +10,26 @@ use App\User;
 use App\Contact;
 use App\Comment;
 use Auth;
+use Session;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     public function getIndex(){
+        // Session::forget('cart');
         $slides = Slide::all();
         $product_types = ProductType::take(3)->get();
-    	$new_products = Product::orderBy('id', 'desc')->paginate(4);
-        $sale_products = Product::where('promotion_price', '<>', 0)->paginate(8);
+        $new_products = Product::orderBy('created_at', 'desc')->limit(9)->get();
+        $sale_products = Product::whereColumn([
+            ['unit_price', '>', 'promotion_price']
+        ])->get();
     	return view('clients.pages.index', compact('slides', 'new_products', 'sale_products', 'product_types'));
     }
 
     public function getloaisp($id = 'all'){
         $categories = ProductType::all();
         if ($id != 'all') {
-            $cate_products = Product::where('id_type', $id)->get();
+            $cate_products = Product::where('id_type', $id)->paginate(6);
         } 
         else {
             $cate_products = Product::all();
@@ -44,7 +48,7 @@ class HomeController extends Controller
 
     public function search(Request $request){
         if($request->has('search')){
-    		$items = Product::search($request->get('search'))->paginate(6);	
+    		$items = Product::search($request->get('search'))->get();	
     	}else{
     		$items = Product::paginate(6);
     	}
